@@ -133,6 +133,13 @@
       "ipa": ["[z]"]
     }
   ],
+  "phonetics_overview": {
+    "vowels": "A sound that results from not restricting air in the mouth during speech.",
+    "consonants": "A sound that results from restriction of air in the mouth during speech."
+  },
+  "phonetic_features": [
+    "When a word has a hard G, C or SC, it must keep the hard sound in all forms of the word."
+  ],
   "diacritics_and_combinations": {
     "diacritics_overview": "Ionian features three diacritics: Grave, Acute, and Circumflex.",
     "specific_combinations": [
@@ -203,5 +210,50 @@
         "Appears only in feminine -i ending nouns as an irregular plural ending."
       ]
     }
-  ]
+  ],
+  "orthography_and_punctuation": {
+    "capitalisation": {
+      "rules": [
+        "First letter of sentences, titles, names of people, places, and institutions are capitalised.",
+        "The content of direct speeches and quotes inside typographical marks are capitalised.",
+        "Names of countries are capitalised, but not the names of languages (e.g., Lo parla ioniano - He speaks Ionian)."
+      ],
+      "examples": [
+        {
+          "type": "direct_speech",
+          "ionian": "L’aja dido, -Ajo a' star in Italia.",
+          "translation": "He said, “I am staying in Italy”."
+        }
+      ]
+    },
+    "country_names_and_articles": {
+      "rule": "Articles are also placed before country names if there are no prepositions preceding the name.",
+      "examples": [
+        { "phrase": "L'Ionia", "meaning": "The country of Ionia" },
+        { "phrase": "La Gallia", "meaning": "The country of France" },
+        {
+          "phrase": "Ple + adjective + dil'Ionia",
+          "meaning": "more (adjective) than Ionia"
+        },
+        { "phrase": "So in Gallia", "meaning": "I am in France" },
+        { "phrase": "So di Gallia", "meaning": "I am from France" }
+      ]
+    },
+    "punctuation": {
+      "comma": {
+        "usages": [
+          "Listing items",
+          "Setting off nonessential information",
+          "Separating main and subordinate clauses",
+          "Appears before the word 'però - but'",
+          "Appears as a subclause after 'pl'aò - also / moreover' and 'tûitavia - however'",
+          "Used to mark decimals"
+        ]
+      },
+      "period": {
+        "name": "Le punto",
+        "usage": "Used for separating big numbers, such as 10.000, etc."
+      }
+    }
+  }
 }
