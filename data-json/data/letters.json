@@ -1,0 +1,207 @@
+{
+  "alphabet": [
+    {
+      "letter": "A",
+      "ipa": ["[a]"]
+    },
+    {
+      "letter": "B",
+      "ipa": ["[b]"]
+    },
+    {
+      "letter": "C",
+      "rules": [
+        { "condition": "before i or e", "ipa": ["[t͡ʃ]"] },
+        { "condition": "otherwise", "ipa": ["[k]"] }
+      ]
+    },
+    {
+      "letter": "D",
+      "ipa": ["[d]"]
+    },
+    {
+      "letter": "E",
+      "variants": [
+        { "form": "E", "ipa": ["[e]"] },
+        { "form": "È", "ipa": ["[ɛ]"] },
+        { "form": "E (stressed)", "ipa": ["[ɛ]"] },
+        { "form": "É (unstressed)", "ipa": ["[e]"] }
+      ]
+    },
+    {
+      "letter": "F",
+      "ipa": ["[f]"]
+    },
+    {
+      "letter": "G",
+      "rules": [
+        { "condition": "before i or e", "ipa": ["[d͡ʒ]"] },
+        { "condition": "otherwise", "ipa": ["[g]"] }
+      ]
+    },
+    {
+      "letter": "H",
+      "ipa": ["(silent)"]
+    },
+    {
+      "letter": "I",
+      "ipa": ["[i]"]
+    },
+    {
+      "letter": "J",
+      "ipa": ["[j]"]
+    },
+    {
+      "letter": "L",
+      "ipa": ["[l]"]
+    },
+    {
+      "letter": "M",
+      "ipa": ["[m]"]
+    },
+    {
+      "letter": "N",
+      "ipa": ["[n]"]
+    },
+    {
+      "letter": "O",
+      "variants": [
+        { "form": "O", "ipa": ["[o]"] },
+        { "form": "Ò", "ipa": ["[ɔ]"] },
+        { "form": "O (stressed)", "ipa": ["[ɔ]"] }
+      ]
+    },
+    {
+      "letter": "P",
+      "ipa": ["[p]"]
+    },
+    {
+      "letter": "Q",
+      "rules": [
+        { "condition": "before i or e", "ipa": ["[k]"] },
+        { "condition": "Qu + Vowel", "ipa": ["[kw]"] }
+      ]
+    },
+    {
+      "letter": "R",
+      "variants": [
+        { "form": "default", "ipa": ["[r]", "(rolled)"] },
+        {
+          "form": "tapped",
+          "condition": "between vowels, after a consonant, or when previous word ends in a vowel",
+          "ipa": ["[ɾ]"]
+        }
+      ]
+    },
+    {
+      "letter": "S",
+      "ipa": ["[s]"],
+      "voicing_rules": {
+        "voicing_contexts": [
+          "between vowels",
+          "before voiced consonants (b, d, g, j, l, m, n, r, v)",
+          "before the sound [w]"
+        ],
+        "voiced_ipa": "[z]",
+        "exceptions": [
+          "does not shift to [z] if the vowel following is stressed",
+          "doubled <ss> stays geminated as [s.s]"
+        ]
+      }
+    },
+    {
+      "letter": "T",
+      "ipa": ["[t]"]
+    },
+    {
+      "letter": "U",
+      "rules": [
+        { "condition": "default", "ipa": ["[u]"] },
+        { "condition": "before a, e, i, or o", "ipa": ["[w]"] }
+      ]
+    },
+    {
+      "letter": "V",
+      "ipa": ["[v]"]
+    },
+    {
+      "letter": "X",
+      "ipa": ["[ks]"]
+    },
+    {
+      "letter": "Z",
+      "ipa": ["[z]"]
+    }
+  ],
+  "diacritics_and_combinations": {
+    "diacritics_overview": "Ionian features three diacritics: Grave, Acute, and Circumflex.",
+    "specific_combinations": [
+      { "pattern": "c + ì + vowel", "ipa": ["[t͡ʃj]"] },
+      { "pattern": "c + í + vowel", "ipa": ["[t͡ʃ‘i]"] },
+      { "pattern": "g + ì + vowel", "ipa": ["[d͡ʒj]"] },
+      { "pattern": "g + í + vowel", "ipa": ["[d͡ʒ’i]"] },
+      { "pattern": "sc + ì + vowel", "ipa": ["[ʃj]"] },
+      { "pattern": "sc + í + vowel", "ipa": ["[ʃ‘i]"] },
+      {
+        "pattern": "û + i",
+        "ipa": ["[ui̯]", "does not carry stress of its own"]
+      }
+    ],
+    "diacritic_usage_notes": [
+      "Grave marker (`) distinguishes homonyms, marks stress position, and marks closed E [e] / O [o] versus open È [ɛ] / Ò [ɔ].",
+      "É appears always as closed [e].",
+      "Circumflex (^) distinguishes ûi /ui̯/ from ui /wi/."
+    ],
+    "palatal_vowel_combinations": [
+      { "pattern": "ci + a / o / u", "ipa": ["[t͡ʃa] / [t͡ʃo] / [t͡ʃu]"] },
+      { "pattern": "gi + a / o / u", "ipa": ["[d͡ʒa] / [d͡ʒo] / [d͡ʒu]"] },
+      { "pattern": "sci + a / o / u", "ipa": ["[ʃa] / [ʃo] / [ʃu]"] }
+    ],
+    "extra_rules_c_g_sc": [
+      { "pattern": "Qi / Qe", "ipa": ["[ki] / [ke]"] },
+      { "pattern": "Ghi / Ghe", "ipa": ["[gi] / [ge]"] },
+      { "pattern": "Sqi / Sqe", "ipa": ["[ski] / [ske]"] },
+      {
+        "pattern": "Sc",
+        "rules": [
+          { "condition": "before i or e", "ipa": ["[ʃ]"] },
+          { "condition": "otherwise", "ipa": ["[k]"] }
+        ]
+      }
+    ]
+  },
+  "digraphs": [
+    { "digraph": "ch", "ipa": ["[x]"] },
+    { "digraph": "th", "ipa": ["[θ]"] },
+    { "digraph": "zz (medial) / z’ (word final)", "ipa": ["[t͡s̺]"] },
+    { "digraph": "nc (before a, o, u) / nq (before i, e)", "ipa": ["[ŋk]"] },
+    { "digraph": "ng (before a, o, u) / ngh (before i, e)", "ipa": ["[ŋg]"] },
+    { "digraph": "gn", "ipa": ["[ɲ]"] },
+    {
+      "digraph": "gl + ia, ie, i, io, iu",
+      "ipa": ["[ʎa], [ʎe], [ʎi], [ʎo], [ʎu]"]
+    },
+    { "digraph": "ll", "ipa": ["[l.l]"] },
+    {
+      "digraph": "tî",
+      "ipa": [
+        "[t͡ʃi]",
+        "Appears in Standard Ionian, Central, Dûilaghian and Flumian dialects."
+      ]
+    },
+    {
+      "digraph": "tê",
+      "ipa": [
+        "[t͡ʃe]",
+        "Appears in Standard Ionian, Central, Dûilaghian and Flumian dialects."
+      ]
+    },
+    {
+      "digraph": "-ée",
+      "ipa": [
+        "[‘i.e]",
+        "Appears only in feminine -i ending nouns as an irregular plural ending."
+      ]
+    }
+  ]
+}
