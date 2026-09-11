@@ -11,8 +11,8 @@
     {
       "letter": "C",
       "rules": [
-        { "condition": "before i or e", "ipa": ["[t͡ʃ]"] },
-        { "condition": "otherwise", "ipa": ["[k]"] }
+        { "condition": "Before i or e", "ipa": ["[t͡ʃ]"] },
+        { "condition": "Otherwise", "ipa": ["[k]"] }
       ]
     },
     {
@@ -35,13 +35,13 @@
     {
       "letter": "G",
       "rules": [
-        { "condition": "before i or e", "ipa": ["[d͡ʒ]"] },
-        { "condition": "otherwise", "ipa": ["[g]"] }
+        { "condition": "Before i or e", "ipa": ["[d͡ʒ]"] },
+        { "condition": "Otherwise", "ipa": ["[g]"] }
       ]
     },
     {
       "letter": "H",
-      "ipa": ["(silent)"]
+      "ipa": ["(Silent)"]
     },
     {
       "letter": "I",
@@ -78,17 +78,17 @@
     {
       "letter": "Q",
       "rules": [
-        { "condition": "before i or e", "ipa": ["[k]"] },
+        { "condition": "Before i or e", "ipa": ["[k]"] },
         { "condition": "Qu + Vowel", "ipa": ["[kw]"] }
       ]
     },
     {
       "letter": "R",
       "variants": [
-        { "form": "default", "ipa": ["[r]", "(rolled)"] },
+        { "form": "Default", "ipa": ["[r]", "(Rolled)"] },
         {
-          "form": "tapped",
-          "condition": "between vowels, after a consonant, or when previous word ends in a vowel",
+          "form": "Tapped",
+          "condition": "Between vowels, after a consonant, or when previous word ends in a vowel",
           "ipa": ["[ɾ]"]
         }
       ]
@@ -99,13 +99,12 @@
       "voicing_rules": {
         "voicing_contexts": [
           "between vowels",
-          "before voiced consonants (b, d, g, j, l, m, n, r, v)",
-          "before the sound [w]"
+          "before certain voiced consonants (b, d, g, m, n, v)"
         ],
         "voiced_ipa": "[z]",
         "exceptions": [
-          "does not shift to [z] if the vowel following is stressed",
-          "doubled <ss> stays geminated as [s.s]"
+          "Does not shift to [z] if the vowel following is stressed",
+          "Doubled <ss> stays geminated as [s.s]"
         ]
       }
     },
@@ -116,8 +115,8 @@
     {
       "letter": "U",
       "rules": [
-        { "condition": "default", "ipa": ["[u]"] },
-        { "condition": "before a, e, i, or o", "ipa": ["[w]"] }
+        { "condition": "Default", "ipa": ["[u]"] },
+        { "condition": "Before a, e, i, or o", "ipa": ["[w]"] }
       ]
     },
     {
@@ -144,14 +143,14 @@
     "diacritics_overview": "Ionian features three diacritics: Grave, Acute, and Circumflex.",
     "specific_combinations": [
       { "pattern": "c + ì + vowel", "ipa": ["[t͡ʃj]"] },
-      { "pattern": "c + í + vowel", "ipa": ["[t͡ʃ‘i]"] },
+      { "pattern": "c + í + vowel", "ipa": ["[t͡ʃˈi]"] },
       { "pattern": "g + ì + vowel", "ipa": ["[d͡ʒj]"] },
-      { "pattern": "g + í + vowel", "ipa": ["[d͡ʒ’i]"] },
+      { "pattern": "g + í + vowel", "ipa": ["[d͡ʒˈi]"] },
       { "pattern": "sc + ì + vowel", "ipa": ["[ʃj]"] },
-      { "pattern": "sc + í + vowel", "ipa": ["[ʃ‘i]"] },
+      { "pattern": "sc + í + vowel", "ipa": ["[ʃˈi]"] },
       {
         "pattern": "û + i",
-        "ipa": ["[ui̯]", "does not carry stress of its own"]
+        "ipa": ["[ui̯]", "Does not carry stress of its own"]
       }
     ],
     "diacritic_usage_notes": [
@@ -171,8 +170,8 @@
       {
         "pattern": "Sc",
         "rules": [
-          { "condition": "before i or e", "ipa": ["[ʃ]"] },
-          { "condition": "otherwise", "ipa": ["[k]"] }
+          { "condition": "Before i or e", "ipa": ["[ʃ]"] },
+          { "condition": "Otherwise", "ipa": ["[k]"] }
         ]
       }
     ]
@@ -181,8 +180,8 @@
     { "digraph": "ch", "ipa": ["[x]"] },
     { "digraph": "th", "ipa": ["[θ]"] },
     { "digraph": "zz (medial) / z’ (word final)", "ipa": ["[t͡s̺]"] },
-    { "digraph": "nc (before a, o, u) / nq (before i, e)", "ipa": ["[ŋk]"] },
-    { "digraph": "ng (before a, o, u) / ngh (before i, e)", "ipa": ["[ŋg]"] },
+    { "digraph": "nc (Before a, o, u) / nq (Before i, e)", "ipa": ["[ŋk]"] },
+    { "digraph": "ng (Before a, o, u) / ngh (Before i, e)", "ipa": ["[ŋg]"] },
     { "digraph": "gn", "ipa": ["[ɲ]"] },
     {
       "digraph": "gl + ia, ie, i, io, iu",
@@ -206,7 +205,7 @@
     {
       "digraph": "-ée",
       "ipa": [
-        "[‘i.e]",
+        "[ˈi.e]",
         "Appears only in feminine -i ending nouns as an irregular plural ending."
       ]
     }
