@@ -12,7 +12,11 @@
       "letter": "C",
       "rules": [
         { "condition": "Before i or e", "ipa": ["[t͡ʃ]"] },
-        { "condition": "Otherwise", "ipa": ["[k]"] }
+        { "condition": "Otherwise", "ipa": ["[k]"] },
+        {
+          "condition": "When the previous word ends with a nasal sound (n, m) and is a preposition.",
+          "ipa": ["[g]"]
+        }
       ]
     },
     {
@@ -73,13 +77,27 @@
     },
     {
       "letter": "P",
-      "ipa": ["[p]"]
+      "rules": [
+        { "condition": "Default", "ipa": ["[p]"] },
+        {
+          "condition": "When the previous word ends with a nasal sound (n, m) and is a preposition.",
+          "ipa": ["[b]"]
+        }
+      ]
     },
     {
       "letter": "Q",
       "rules": [
         { "condition": "Before i or e", "ipa": ["[k]"] },
-        { "condition": "Qu + Vowel", "ipa": ["[kw]"] }
+        { "condition": "Qu + Vowel", "ipa": ["[kw]"] },
+        {
+          "condition": "When Q appears before i or e as qi or qe while the previous word ends with a nasal sound (n, m) and is a preposition.",
+          "ipa": ["[g]"]
+        },
+        {
+          "condition": "When Qu + Vowel appears and the previous word ends with a nasal sound (n, m) and is a preposition.",
+          "ipa": ["[gw]"]
+        }
       ]
     },
     {
@@ -110,7 +128,13 @@
     },
     {
       "letter": "T",
-      "ipa": ["[t]"]
+      "rules": [
+        { "condition": "Default", "ipa": ["[t]"] },
+        {
+          "condition": "When the previous word ends with a nasal sound (n, m) and is a preposition.",
+          "ipa": ["[d]"]
+        }
+      ]
     },
     {
       "letter": "U",
