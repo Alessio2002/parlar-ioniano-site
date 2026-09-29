@@ -1,0 +1,12 @@
+/* Custom theme configurations loaded after Bootstrap */
+:root {
+  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+/* Restore the centered layout container box for the alphabet page */
+body {
+  max-width: 1920px !important;
+  margin: 2rem auto !important;
+  padding: 0 1rem !important;
+}
