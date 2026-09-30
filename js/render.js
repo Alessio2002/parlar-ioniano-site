@@ -1,6 +1,7 @@
-export function renderTable({ title, columns, rows, note }) {
-  const container = document.createElement("div");
+export function renderTable({ title, columns, rows, note }, containerEl) {
+  const container = containerEl || document.createElement("div");
   container.className = "card mb-4 shadow-sm";
+  container.innerHTML = "";
 
   if (title) {
     const header = document.createElement("div");
@@ -30,7 +31,7 @@ export function renderTable({ title, columns, rows, note }) {
     const tr = document.createElement("tr");
     rowData.forEach((cellData) => {
       const td = document.createElement("td");
-      td.textContent = cellData;
+      td.innerHTML = cellData; // <--- Changed from textContent to innerHTML
       tr.appendChild(td);
     });
     tbody.appendChild(tr);

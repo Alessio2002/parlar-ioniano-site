@@ -35,8 +35,8 @@
         "Translation / Notes"
       ],
       "rows": [
-        ["Mi", "Me", "Me ([mi] / [me])"],
-        ["Ti", "Te", "You ([ti] / [te])"],
+        ["Mi", "Me", "Me"],
+        ["Ti", "Te", "You"],
         ["La", "—", "You (formal direct)"],
         ["Le", "—", "To you (formal indirect)"],
         ["Lo", "Isso", "Him (masculine)"],
@@ -89,11 +89,31 @@
       "title": "Imperative Pronouns (Page 17)",
       "columns": ["Pronoun", "Grammatical Role", "Example Structure"],
       "rows": [
-        ["Tu", "You", "Tu parla (You speak)"],
-        ["La", "You (formal / 3rd person invariable)", "Lei parlati"],
-        ["Noi", "We", "Noi parlamo"],
-        ["Voi", "You (plural)", "Voi parlate"],
-        ["Lor", "You (plural formal) / They", "Lor parlatino"]
+        [
+          "Tu",
+          "You",
+          "Tu parla<br><small class='text-muted'>You speak (informal)</small>"
+        ],
+        [
+          "La",
+          "You (formal / 3rd person invariable)",
+          "Lei parlati<br><small class='text-muted'>You speak (formal)</small>"
+        ],
+        [
+          "Noi",
+          "We",
+          "Noi parlamo<br><small class='text-muted'>Let us speak</small>"
+        ],
+        [
+          "Voi",
+          "You (plural)",
+          "Voi parlate<br><small class='text-muted'>You speak (plural)</small>"
+        ],
+        [
+          "Lor",
+          "You (plural formal) / They",
+          "Lor parlatino<br><small class='text-muted'>They speak / Speak (plural formal)</small>"
+        ]
       ],
       "note": "Source: PDF Page 17"
     },
@@ -121,42 +141,182 @@
     {
       "id": "prepositional-colloquial",
       "title": "Prepositional Object Pronouns - Colloquial Animate (Page 22)",
-      "columns": ["Category", "Form / Construction", "Notes"],
+      "columns": ["Person / Pronoun", "Per", "Ad / A'", "Con"],
       "rows": [
         [
-          "Animate Prepositional",
-          "Utilizes full object forms (e.g., isso, essa, loro, me, te)",
-          "Used specifically in colloquial contexts following prepositions for animate referents (Pages 14 & 22)"
+          "1st person Sg. (Mi / Me)",
+          "Pemmè<br><small class='text-muted'>For me</small>",
+          "Ammè<br><small class='text-muted'>To me</small>",
+          "Cummè<br><small class='text-muted'>With me</small>"
+        ],
+        [
+          "2nd person Sg. (Ti / Te)",
+          "Petè<br><small class='text-muted'>For you</small>",
+          "Atè<br><small class='text-muted'>To you</small>",
+          "Cutè<br><small class='text-muted'>With you</small>"
+        ],
+        [
+          "2nd person Sg. Formal (La / Essa)",
+          "Pessà<br><small class='text-muted'>For you (formal)</small>",
+          "Assà<br><small class='text-muted'>To you (formal)</small>",
+          "Cussà<br><small class='text-muted'>With you (formal)</small>"
+        ],
+        [
+          "3rd person Sg. Masc. (Lo / Isso)",
+          "Pessò<br><small class='text-muted'>For him</small>",
+          "Assò<br><small class='text-muted'>To him</small>",
+          "Cussò<br><small class='text-muted'>With him</small>"
+        ],
+        [
+          "3rd person Sg. Fem. (La / Essa)",
+          "Pessà<br><small class='text-muted'>For her</small>",
+          "Assà<br><small class='text-muted'>To her</small>",
+          "Cussà<br><small class='text-muted'>With her</small>"
+        ],
+        [
+          "1st person Pl. (Ni)",
+          "Penni<br><small class='text-muted'>For us</small>",
+          "Annì<br><small class='text-muted'>To us</small>",
+          "Cunnì<br><small class='text-muted'>With us</small>"
+        ],
+        [
+          "2nd person Pl. (Vi)",
+          "Pevvì<br><small class='text-muted'>For you (pl.)</small>",
+          "Avvì<br><small class='text-muted'>To you (pl.)</small>",
+          "Cuvvì<br><small class='text-muted'>With you (pl.)</small>"
+        ],
+        [
+          "3rd person Pl. (Lì)",
+          "Pell'<br><small class='text-muted'>For them</small>",
+          "All'<br><small class='text-muted'>To them</small>",
+          "Cull'<br><small class='text-muted'>With them</small>"
         ]
       ],
-      "note": "Source: PDF Pages 14 & 22"
+      "note": "Source: PDF Page 22"
     },
     {
       "id": "double-object",
-      "title": "Double Object Pronouns & Usage (Pages 23–26)",
-      "columns": [
-        "Double Object Combination",
-        "Literal Meaning",
-        "Function / Notes"
-      ],
+      "title": "Standard Double Object Pronouns & Usage (Pages 23–26)",
+      "columns": ["Clitic", "lo", "la", "lu", "li", "le", "-ne / -n'"],
       "rows": [
         [
-          "-ne / -n’",
-          "about it, some of it, of it, about/some/of them",
-          "Appends before vowels or letter N (Page 23)"
+          "mi",
+          "Me lo<br><small class='text-muted'>To me + it (masc.)</small>",
+          "Me la<br><small class='text-muted'>To me + it (fem.)</small>",
+          "Me lu<br><small class='text-muted'>To me + it (neut.)</small>",
+          "Me li<br><small class='text-muted'>To me + them (masc.)</small>",
+          "Me le<br><small class='text-muted'>To me + them (fem.)</small>",
+          "Me ne / me n'<br><small class='text-muted'>To me + of it / some of it</small>"
         ],
         [
-          "Liglio / Liglia / Ligliu / Ligli / Tiglie",
-          "it/them to him / her / them",
-          "Combined direct and indirect object forms (Page 25)"
+          "ti",
+          "Te lo<br><small class='text-muted'>To you + it (masc.)</small>",
+          "Te la<br><small class='text-muted'>To you + it (fem.)</small>",
+          "Te lu<br><small class='text-muted'>To you + it (neut.)</small>",
+          "Te li<br><small class='text-muted'>To you + them (masc.)</small>",
+          "Te le<br><small class='text-muted'>To you + them (fem.)</small>",
+          "Te ne / te n'<br><small class='text-muted'>To you + of it / some of it</small>"
         ],
         [
-          "Dimene",
-          "Tell me about it",
-          "Imperative form dropping '-r' before double object clitic (Page 26)"
+          "li, le",
+          "Liglio<br><small class='text-muted'>To them/him/her + it (masc.)</small>",
+          "Liglia<br><small class='text-muted'>To them/him/her + it (fem.)</small>",
+          "Ligliu<br><small class='text-muted'>To them/him/her + it (neut.)</small>",
+          "Ligli<br><small class='text-muted'>To them/him/her + them (masc.)</small>",
+          "Liglie<br><small class='text-muted'>To them/him/her + them (fem.)</small>",
+          "Lene / len'<br><small class='text-muted'>To them/him/her + of it / some of it</small>"
+        ],
+        [
+          "ce",
+          "Ce lo<br><small class='text-muted'>To us + it (masc.)</small>",
+          "Ce la<br><small class='text-muted'>To us + it (fem.)</small>",
+          "Ce lu<br><small class='text-muted'>To us + it (neut.)</small>",
+          "Ce li<br><small class='text-muted'>To us + them (masc.)</small>",
+          "Ce le<br><small class='text-muted'>To us + them (fem.)</small>",
+          "Ce ne / ce n'<br><small class='text-muted'>To us + of it / some of it</small>"
+        ],
+        [
+          "vi",
+          "Ve lo<br><small class='text-muted'>To you pl. + it (masc.)</small>",
+          "Ve la<br><small class='text-muted'>To you pl. + it (fem.)</small>",
+          "Ve lu<br><small class='text-muted'>To you pl. + it (neut.)</small>",
+          "Ve li<br><small class='text-muted'>To you pl. + them (masc.)</small>",
+          "Ve le<br><small class='text-muted'>To you pl. + them (fem.)</small>",
+          "Ve ne / ve n'<br><small class='text-muted'>To you pl. + of it / some of it</small>"
+        ],
+        [
+          "lì",
+          "Liglio<br><small class='text-muted'>To them + it (masc.)</small>",
+          "Liglia<br><small class='text-muted'>To them + it (fem.)</small>",
+          "Ligliu<br><small class='text-muted'>To them + it (neut.)</small>",
+          "Ligli<br><small class='text-muted'>To them + them (masc.)</small>",
+          "Liglie<br><small class='text-muted'>To them + them (fem.)</small>",
+          "Lene / len'<br><small class='text-muted'>To them + of it / some of it</small>"
         ]
       ],
-      "note": "Source: PDF Pages 23–26"
+      "note": "Source: PDF Pages 23–26 | Usage & Rules: -ne / -n' means 'about it, some of it, of it, about/some/of them' (-n' is used before vowels or the letter N). Neuter double objects shift to feminine plural in the plural form. Double object pronouns never carry word stress. For imperatives (e.g., Dimene - 'Tell me about it'), drop the final '-r' of the infinitive."
+    },
+    {
+      "id": "reflexive-double-object",
+      "title": "Double Object Pronouns with Reflexives (Page 24)",
+      "columns": ["Reflexive", "lo", "la", "lu", "li", "le", "-ne / -n'"],
+      "rows": [
+        [
+          "mi",
+          "Me lo<br><small class='text-muted'>To myself + it (masc.)</small>",
+          "Me la<br><small class='text-muted'>To myself + it (fem.)</small>",
+          "Me lu<br><small class='text-muted'>To myself + it (neut.)</small>",
+          "Me li<br><small class='text-muted'>To myself + them (masc.)</small>",
+          "Me le<br><small class='text-muted'>To myself + them (fem.)</small>",
+          "Me ne / me n'<br><small class='text-muted'>To myself + of it / some of it</small>"
+        ],
+        [
+          "ti",
+          "Te lo<br><small class='text-muted'>To yourself + it (masc.)</small>",
+          "Te la<br><small class='text-muted'>To yourself + it (fem.)</small>",
+          "Te lu<br><small class='text-muted'>To yourself + it (neut.)</small>",
+          "Te li<br><small class='text-muted'>To yourself + them (masc.)</small>",
+          "Te le<br><small class='text-muted'>To yourself + them (fem.)</small>",
+          "Te ne / te n'<br><small class='text-muted'>To yourself + of it / some of it</small>"
+        ],
+        [
+          "se",
+          "Se lo<br><small class='text-muted'>To self + it (masc.)</small>",
+          "Se la<br><small class='text-muted'>To self + it (fem.)</small>",
+          "Se lu<br><small class='text-muted'>To self + it (neut.)</small>",
+          "Se li<br><small class='text-muted'>To self + them (masc.)</small>",
+          "Se le<br><small class='text-muted'>To self + them (fem.)</small>",
+          "Se ne / se n'<br><small class='text-muted'>To self + of it / some of it</small>"
+        ],
+        [
+          "ce",
+          "Ce lo<br><small class='text-muted'>To ourselves + it (masc.)</small>",
+          "Ce la<br><small class='text-muted'>To ourselves + it (fem.)</small>",
+          "Ce lu<br><small class='text-muted'>To ourselves + it (neut.)</small>",
+          "Ce li<br><small class='text-muted'>To ourselves + them (masc.)</small>",
+          "Ce le<br><small class='text-muted'>To ourselves + them (fem.)</small>",
+          "Ce ne / te n'<br><small class='text-muted'>To ourselves + of it / some of it</small>"
+        ],
+        [
+          "vi",
+          "Ve lo<br><small class='text-muted'>To yourselves + it (masc.)</small>",
+          "Ve la<br><small class='text-muted'>To yourselves + it (fem.)</small>",
+          "Ve lu<br><small class='text-muted'>To yourselves + it (neut.)</small>",
+          "Ve li<br><small class='text-muted'>To yourselves + them (masc.)</small>",
+          "Ve le<br><small class='text-muted'>To yourselves + them (fem.)</small>",
+          "Me ne / me n'<br><small class='text-muted'>To yourselves + of it / some of it</small>"
+        ],
+        [
+          "si",
+          "Si lo<br><small class='text-muted'>To themselves + it (masc.)</small>",
+          "Si la<br><small class='text-muted'>To themselves + it (fem.)</small>",
+          "Si lu<br><small class='text-muted'>To themselves + it (neut.)</small>",
+          "Si li<br><small class='text-muted'>To themselves + them (masc.)</small>",
+          "Si le<br><small class='text-muted'>To themselves + them (fem.)</small>",
+          "Si ne / si n'<br><small class='text-muted'>To themselves + of it / some of it</small>"
+        ]
+      ],
+      "note": "Source: PDF Page 24 | Formula & Structure: Reflexive double objects combine clitics with reflexive pronouns placed directly before verbs."
     }
   ]
 }
