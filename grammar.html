@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pronouns – Parlar ioniano</title>
+    <!-- Pinned Bootstrap CSS CDN with Integrity Hash -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.5;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      /* Ensure IPA brackets and special linguistic characters render cleanly */
+      td {
+        font-family: "Lucida Sans Unicode", "DejaVu Sans", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Consistent Shared Navigation Shell -->
+    <header class="mb-4" id="page-header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded px-3">
+        <a class="navbar-brand" href="index.html">Parlar ioniano</a>
+        <div class="navbar-nav ms-auto">
+          <!-- "Home" link removed -->
+          <a class="nav-link" href="alphabet.html">Alphabet & Pronunciation</a>
+          <a class="nav-link active" aria-current="page" href="grammar.html"
+            >Pronouns & Grammar</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-4">
+      <h1 class="mb-4">Ionian Pronouns Documentation</h1>
+      <p class="text-muted mb-4">
+        Interactive data-driven pronoun paradigms transcribed from reference
+        documentation (PDF pages 13–18 and 22–26).
+      </p>
+
+      <!-- Loading State Container -->
+      <div id="loading-state" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading pronoun data...</span>
+        </div>
+        <p class="mt-2 text-muted">
+          Loading pronoun tables from data source...
+        </p>
+      </div>
+
+      <!-- Error State Container (Hidden by default) -->
+      <div id="error-state" class="alert alert-danger d-none" role="alert">
+        <h4 class="alert-heading">Failed to load pronoun data</h4>
+        <p id="error-message">
+          An error occurred while fetching the grammar dataset. Please check if
+          the data file exists and try again.
+        </p>
+      </div>
+
+      <!-- Main Content Container (Tabs and Panes, hidden until loaded) -->
+      <div id="grammar-content" class="d-none">
+        <!-- Bootstrap Nav Tabs -->
+        <ul class="nav nav-tabs mb-3" id="pronounTabs" role="tablist">
+          <!-- Dynamically populated via JS -->
+        </ul>
+
+        <!-- Bootstrap Tab Content Panes -->
+        <div class="tab-content" id="pronounTabContent">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Automatically hide header if viewed inside the index.html iframe to prevent duplication
+      if (window.self !== window.top) {
+        const header = document.getElementById("page-header");
+        if (header) {
+          header.style.display = "none";
+        }
+      }
+    </script>
+
+    <!-- Pinned Bootstrap JS Bundle CDN with Integrity Hash -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Wire-up Script -->
+    <script type="module">
+      import { renderTable } from "./js/render.js";
+
+      async function loadPronouns() {
+        const loadingEl = document.getElementById("loading-state");
+        const errorEl = document.getElementById("error-state");
+        const contentEl = document.getElementById("grammar-content");
+        const tabsContainer = document.getElementById("pronounTabs");
+        const contentContainer = document.getElementById("pronounTabContent");
+
+        try {
+          // Fetch from the standard data path
+          const response = await fetch("data-json/data/grammar.json");
+          if (!response.ok) {
+            throw new Error(
+              `HTTP error! status: ${response.status} (File not found or unreadable)`
+            );
+          }
+
+          const data = await response.json();
+          const pronounSets = data.pronouns;
+
+          if (!pronounSets || !Array.isArray(pronounSets)) {
+            throw new Error(
+              "Invalid JSON structure: 'pronouns' array is missing."
+            );
+          }
+
+          // Clear existing elements just in case
+          tabsContainer.innerHTML = "";
+          contentContainer.innerHTML = "";
+
+          // Loop through each pronoun set and create tab + pane
+          pronounSets.forEach((set, index) => {
+            const isFirst = index === 0;
+            const tabId = `tab-${set.id}`;
+            const paneId = `pane-${set.id}`;
+
+            // 1. Create Nav Tab Item
+            const li = document.createElement("li");
+            li.className = "nav-item";
+            li.role = "presentation";
+
+            const button = document.createElement("button");
+            button.className = `nav-link ${isFirst ? "active" : ""}`;
+            button.id = tabId;
+            button.dataset.bsToggle = "tab";
+            button.dataset.bsTarget = `#${paneId}`;
+            button.type = "button";
+            button.role = "tab";
+            button.ariaControls = paneId;
+            button.ariaSelected = isFirst ? "true" : "false";
+            // Keep title concise for tabs
+            button.textContent = set.title.split("(")[0].trim();
+
+            li.appendChild(button);
+            tabsContainer.appendChild(li);
+
+            // 2. Create Tab Pane Content
+            const pane = document.createElement("div");
+            pane.className = `tab-pane fade ${isFirst ? "show active" : ""}`;
+            pane.id = paneId;
+            pane.role = "tabpanel";
+            pane.ariaLabelledBy = tabId;
+
+            // Render table using the generic renderTable function
+            const tableElement = renderTable({
+              title: set.title,
+              columns: set.columns,
+              rows: set.rows,
+              note: set.note,
+            });
+
+            pane.appendChild(tableElement);
+            contentContainer.appendChild(pane);
+          });
+
+          // Hide loading, show content
+          loadingEl.classList.add("d-none");
+          contentEl.classList.remove("d-none");
+        } catch (err) {
+          console.error("Error loading grammar data:", err);
+          loadingEl.classList.add("d-none");
+          document.getElementById(
+            "error-message"
+          ).textContent = `Error details: ${err.message}. Test the error state by renaming grammar.json temporarily.`;
+          errorEl.classList.remove("d-none");
+        }
+      }
+
+      // Execute on load
+      loadPronouns();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+{
+  "pronouns": [
+    {
+      "id": "subject",
+      "title": "Subject & Impersonal Object Pronouns (Page 13)",
+      "columns": [
+        "Pronoun / Form",
+        "Grammatical Function / Description",
+        "IPA / Notes"
+      ],
+      "rows": [
+        ["Jo", "I (Subject)", "[jo]"],
+        ["Tu", "You (Subject - informal)", "[tu]"],
+        ["La", "You (Subject - formal, invariable)", "[la]"],
+        ["Lo", "He (Subject - masculine)", "[lo]"],
+        ["La", "She (Subject - feminine)", "[la]"],
+        ["Lu", "It (Subject - neuter)", "[lu]"],
+        ["Noi", "We (Subject)", "[nɔi̯]"],
+        ["Voi", "You (Subject - plural informal)", "[vɔi̯]"],
+        ["Lor", "You (Subject - plural formal) / They", "['lɔr]"],
+        [
+          "Lo / La / Lu / Li / Le / L'",
+          "Impersonal Object Pronouns (masc/fem/neut/plural/elision)",
+          "Goes before verb or after preposition (objects only)"
+        ]
+      ],
+      "note": "Source: PDF Page 13"
+    },
+    {
+      "id": "object",
+      "title": "Object Pronouns - Direct & Prepositional (Pages 14 & 18)",
+      "columns": [
+        "Clitic (Before Verb)",
+        "Full Form (After Preposition)",
+        "Translation / Notes"
+      ],
+      "rows": [
+        ["Mi", "Me", "Me ([mi] / [me])"],
+        ["Ti", "Te", "You ([ti] / [te])"],
+        ["La", "—", "You (formal direct)"],
+        ["Le", "—", "To you (formal indirect)"],
+        ["Lo", "Isso", "Him (masculine)"],
+        ["La", "Essa", "Her (feminine)"],
+        ["Lu", "—", "It (neuter - no full form)"],
+        ["Ni", "—", "Us"],
+        ["Vi", "—", "You (plural)"],
+        ["Lì", "Loro", "Them (plural, invariable for Loro)"]
+      ],
+      "note": "Source: PDF Pages 14 & 18"
+    },
+    {
+      "id": "possessive",
+      "title": "Possessive Pronouns (Page 15)",
+      "columns": [
+        "Singular Object (Masc / Fem / Neut)",
+        "Plural Object (Masc / Fem)",
+        "Translation"
+      ],
+      "rows": [
+        ["Mìo / Mìa / Meu", "Mièi / Mè", "Mine / My"],
+        ["Tuo / Tua / Tue", "Tûi / Tue", "Your"],
+        ["Suo / Sua / Sue", "Sûi / Sue", "Your (formal) / His / Her / Its"],
+        ["Nuosto / Nuosta / Nuostu", "Nuosti / Nuoste", "Ours"],
+        ["Vuosto / Vuosta / Vuostu", "Vuosti / Vuoste", "Yours (plural)"],
+        ["Loro", "Loro", "Yours (plural formal) / Theirs (invariable)"]
+      ],
+      "note": "Source: PDF Page 15"
+    },
+    {
+      "id": "reflexive",
+      "title": "Reflexive Pronouns (Page 16)",
+      "columns": [
+        "Reflexive Pronoun",
+        "Colloquial Elision (Before Vowels)",
+        "Translation"
+      ],
+      "rows": [
+        ["Mi", "M’", "Myself"],
+        ["Ti", "T’", "Yourself"],
+        ["Se", "S’", "Yourself (formal) / Himself / Herself / Itself"],
+        ["Ce", "C’", "Ourselves"],
+        ["Vi", "V’", "Yourselves (informal & formal)"],
+        ["Si", "S’", "Themselves"]
+      ],
+      "note": "Source: PDF Page 16"
+    },
+    {
+      "id": "imperative",
+      "title": "Imperative Pronouns (Page 17)",
+      "columns": ["Pronoun", "Grammatical Role", "Example Structure"],
+      "rows": [
+        ["Tu", "You", "Tu parla (You speak)"],
+        ["La", "You (formal / 3rd person invariable)", "Lei parlati"],
+        ["Noi", "We", "Noi parlamo"],
+        ["Voi", "You (plural)", "Voi parlate"],
+        ["Lor", "You (plural formal) / They", "Lor parlatino"]
+      ],
+      "note": "Source: PDF Page 17"
+    },
+    {
+      "id": "indirect-transitive",
+      "title": "Indirect Object Pronouns with Intransitive Verbs (Page 18)",
+      "columns": ["Pronoun", "Translation / Meaning", "Usage Notes"],
+      "rows": [
+        [
+          "mi",
+          "for / to me",
+          "Used with movement / verbs with no direct object"
+        ],
+        ["ti", "for / to you", "Intransitive indirect object"],
+        ["le", "for / to you (formal)", "Formal indirect"],
+        ["li", "for / to him / to it (masc.)", "Masculine singular indirect"],
+        ["le", "for / to her / to it (fem.)", "Feminine singular indirect"],
+        ["la", "for / to it (neut. object only)", "Neuter object indirect"],
+        ["ce", "for / to us", "Plural indirect"],
+        ["vi", "for / to you (plural)", "Plural indirect"],
+        ["lì", "for / to them", "Plural indirect"]
+      ],
+      "note": "Source: PDF Page 18"
+    },
+    {
+      "id": "prepositional-colloquial",
+      "title": "Prepositional Object Pronouns - Colloquial Animate (Page 22)",
+      "columns": ["Category", "Form / Construction", "Notes"],
+      "rows": [
+        [
+          "Animate Prepositional",
+          "Utilizes full object forms (e.g., isso, essa, loro, me, te)",
+          "Used specifically in colloquial contexts following prepositions for animate referents (Pages 14 & 22)"
+        ]
+      ],
+      "note": "Source: PDF Pages 14 & 22"
+    },
+    {
+      "id": "double-object",
+      "title": "Double Object Pronouns & Usage (Pages 23–26)",
+      "columns": [
+        "Double Object Combination",
+        "Literal Meaning",
+        "Function / Notes"
+      ],
+      "rows": [
+        [
+          "-ne / -n’",
+          "about it, some of it, of it, about/some/of them",
+          "Appends before vowels or letter N (Page 23)"
+        ],
+        [
+          "Liglio / Liglia / Ligliu / Ligli / Tiglie",
+          "it/them to him / her / them",
+          "Combined direct and indirect object forms (Page 25)"
+        ],
+        [
+          "Dimene",
+          "Tell me about it",
+          "Imperative form dropping '-r' before double object clitic (Page 26)"
+        ]
+      ],
+      "note": "Source: PDF Pages 23–26"
+    }
+  ]
+}

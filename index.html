@@ -11,23 +11,43 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- Your Custom Stylesheet loaded AFTER Bootstrap -->
     <link rel="stylesheet" href="css/style.css" />
     <style>
       body {
         margin: 0;
         padding: 0;
         font-family: system-ui, sans-serif;
+        overflow: hidden;
+      }
+      .iframe-container {
+        height: calc(100vh - 86px);
       }
       iframe {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         border: none;
       }
     </style>
   </head>
   <body>
-    <iframe src="alphabet.html" title="Alphabet and Pronunciation"></iframe>
+    <!-- Standard Shared Navigation Bar -->
+    <header class="mb-4 pt-3 px-3">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded px-3">
+        <a class="navbar-brand" href="index.html">Parlar ioniano</a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link active" aria-current="page" href="index.html"
+            >Home</a
+          >
+          <a class="nav-link" href="alphabet.html">Alphabet & Pronunciation</a>
+          <a class="nav-link" href="grammar.html">Pronouns & Grammar</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="iframe-container">
+      <iframe src="alphabet.html" title="Alphabet and Pronunciation"></iframe>
+    </div>
+
     <!-- Pinned Bootstrap JS Bundle CDN with Integrity Hash -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

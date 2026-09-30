@@ -42,16 +42,30 @@
     </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="index.html">Home</a> |
-        <a href="alphabet.html">Alphabet & Pronunciation</a>
+    <!-- Navigation header that auto-hides if loaded inside index.html's iframe -->
+    <header class="mb-4" id="page-header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded px-3">
+        <a class="navbar-brand" href="index.html">Parlar ioniano</a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="alphabet.html">Alphabet & Pronunciation</a>
+          <a class="nav-link" href="grammar.html">Pronouns & Grammar</a>
+        </div>
       </nav>
     </header>
 
     <main>
       <div id="alphabet-container"></div>
     </main>
+
+    <script>
+      // Automatically hide header if viewed inside the index.html iframe to prevent duplication
+      if (window.self !== window.top) {
+        const header = document.getElementById("page-header");
+        if (header) {
+          header.style.display = "none";
+        }
+      }
+    </script>
 
     <script type="module">
       import { renderAlphabetPage } from "./js/data.js";
