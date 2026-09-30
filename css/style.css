@@ -10,3 +10,18 @@ body {
   margin: 2rem auto !important;
   padding: 0 1rem !important;
 }
+
+/* Custom Navbar Styling matching Ionian document blue */
+.navbar {
+  background-color: #1a4a84 !important;
+}
+
+/* Ensure navbar brand and links look clean and readable on the blue background */
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar .nav-link:hover {
+  color: #d1e1f0 !important;
+}
