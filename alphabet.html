@@ -19,7 +19,7 @@
         line-height: 1.5;
         max-width: 900px;
         margin: 2rem auto;
-        padding: 0 1rem;
+        padding: 0 1rem 4rem 1rem; /* Added bottom padding to the body */
       }
       table {
         width: 100%;
@@ -35,6 +35,7 @@
       th {
         background-color: #f4f4f4;
       }
+      /* Ensure IPA brackets and special linguistic characters render cleanly */
       td {
         font-family: "Lucida Sans Unicode", "DejaVu Sans", Arial, sans-serif;
       }
@@ -48,6 +49,7 @@
           >Parlar Ioniano</a
         >
         <div class="navbar-nav ms-auto">
+          <!-- "Home" link removed -->
           <a class="nav-link active" aria-current="page" href="alphabet.html"
             >Alphabet & Pronunciation</a
           >
@@ -56,7 +58,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="mb-5 pb-4">
       <div id="alphabet-container"></div>
     </main>
 
