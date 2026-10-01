@@ -15,9 +15,9 @@
         ["Lo", "He (Subject - masculine)", "[lo]"],
         ["La", "She (Subject - feminine)", "[la]"],
         ["Lu", "It (Subject - neuter)", "[lu]"],
-        ["Noi", "We (Subject)", "[nɔi̯]"],
-        ["Voi", "You (Subject - plural informal)", "[vɔi̯]"],
-        ["Lor", "You (Subject - plural formal) / They", "['lɔr]"],
+        ["Noi", "We (Subject)", "[noi]"],
+        ["Voi", "You (Subject - plural informal)", "[voi]"],
+        ["Lor", "You (Subject - plural formal) / They", "['lor]"],
         [
           "Lo / La / Lu / Li / Le / L'",
           "Impersonal Object Pronouns (masc/fem/neut/plural/elision)",
@@ -317,6 +317,105 @@
         ]
       ],
       "note": "Source: PDF Page 24 | Formula & Structure: Reflexive double objects combine clitics with reflexive pronouns placed directly before verbs."
+    },
+    {
+      "id": "gender-rules",
+      "title": "Grammatical Gender & Number Matrix (Page 8)",
+      "columns": ["Gender / Number", "Singular Suffixes", "Plural Suffixes"],
+      "rows": [
+        ["Masculine", "-o, -u, consonant, -e", "-i"],
+        ["Feminine", "-a, consonant, -e", "-e / -i (for -e ending nouns)"],
+        [
+          "Neuter",
+          "-u, consonant, -e (inanimate only)",
+          "-a (merges with fem. plural form, or -i if ending in -e)"
+        ]
+      ],
+      "note": "Source: PDF Page 8 | Three grammatical genders (Masculine, Feminine, Neuter). Neuter cannot be used for animate nouns."
+    },
+    {
+      "id": "indefinite-articles",
+      "title": "Indefinite Articles (Page 19)",
+      "columns": ["Gender / Number", "Singular Forms", "Plural Forms"],
+      "rows": [
+        [
+          "Masculine",
+          "Un (consonant)<br>Um (before M, P, B)<br>Uno (z, x, ps, gn, s+consonant)<br>Un' (vowel or N)",
+          "l' / li / 'i"
+        ],
+        ["Feminine", "Una (consonant)<br>Un' (vowel or N)", "L' / Le / 'E"],
+        [
+          "Neuter",
+          "Unu (consonant)<br>Un' (vowel or N)",
+          "Switches to feminine plural"
+        ]
+      ],
+      "note": "Source: PDF Page 19 | Indefinite articles equivalent of (a) and (an)."
+    },
+    {
+      "id": "definite-articles",
+      "title": "Definite Articles (Page 19)",
+      "columns": ["Gender / Number", "Singular", "Plural"],
+      "rows": [
+        [
+          "Masculine",
+          "Lo (z, x, ps, gn, s+cons.)<br>Le (sing.)<br>L' (vowel)<br>'E (L-elision)",
+          "Li<br>L' (vowel)<br>'I (L-elision)"
+        ],
+        [
+          "Feminine",
+          "La (sing.)<br>L' (vowel)<br>'A (L-elision)",
+          "Le<br>L' (vowel)<br>'E (L-elision)"
+        ],
+        [
+          "Neuter",
+          "Lu (sing.)<br>L' (vowel)<br>'U (L-elision)",
+          "Le (switches to feminine plural)"
+        ]
+      ],
+      "note": "Source: PDF Page 19 | Definite articles equivalent of (the). L gets phonetically geminated after articles with L elision."
+    },
+    {
+      "id": "partitive-articles",
+      "title": "Partitive Articles & Articulated Prepositions (Pages 20–21)",
+      "columns": [
+        "Preposition + Article",
+        "Singular (Masc / Fem / Neut)",
+        "Plural (Masc / Fem)"
+      ],
+      "rows": [
+        [
+          "Dil / Dila / Dilu (Of the)",
+          "Dil / Dila / Dilu<br>Dil' (vowel / L-starting)<br>Dilo (z, x, ps, gn, s+cons.)",
+          "Digli / Diglie<br>Digli' (vowel/pl.)"
+        ],
+        [
+          "Al / Ala / Alu (To / At the)",
+          "Al / Ala / Alu<br>Al' (vowel / L-starting)<br>Alo (z, x, ps, gn, s+cons.)",
+          "Agli / Aglie<br>Agli' (vowel/pl.)"
+        ],
+        [
+          "Dal / Dala / Dalu (From the)",
+          "Dal / Dala / Dalu<br>Dal' (vowel / L-starting)<br>Dalo (z, x, ps, gn, s+cons.)",
+          "Dagli / Daglie<br>Dagli' (vowel/pl.)"
+        ],
+        [
+          "Nil / Nila / Nilu (In the)",
+          "Nil / Nila / Nilu<br>Nil' (vowel / L-starting)<br>Nilo (z, x, ps, gn, s+cons.)",
+          "Nigli / Niglie<br>Nigli' (vowel/pl.)"
+        ],
+        [
+          "Sul / Sula / Sulu (On the)",
+          "Sul / Sula / Sulu<br>Sul' (vowel / L-starting)<br>Sulo (z, x, ps, gn, s+cons.)",
+          "Sugli / Suglie<br>Sugli' (vowel/pl.)"
+        ],
+        [
+          "Col / Cola / Colu (With the)",
+          "Col / Cola / Colu<br>Col' (vowel / L-starting)<br>Colo (z, x, ps, gn, s+cons.)",
+          "Cogli / Coglie<br>Cogli' (vowel/pl.)"
+        ]
+      ],
+      "note": "Source: PDF Pages 20–21 | All partitive articles and articulated prepositions get the suffix -o when words start with z, x, ps, gn, s + consonant (Masculine). Singular items with two or more syllables are oxytonic."
     }
   ]
 }
