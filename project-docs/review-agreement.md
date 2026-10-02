@@ -20,4 +20,4 @@ Reviewers will examine the following deliverables on the live deployment:
 
 ## Public Deployment URL
 
-- [Live LinguApp / Grammar Documentation](https://alessio2002.github.io/parlar-ioniano-site/)
+- [Parlar Ioniano site](https://alessio2002.github.io/parlar-ioniano-site/)
