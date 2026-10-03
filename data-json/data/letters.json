@@ -14,7 +14,7 @@
         { "condition": "Before i or e", "ipa": ["[t͡ʃ]"] },
         { "condition": "Otherwise", "ipa": ["[k]"] },
         {
-          "condition": "When the previous word ends with a nasal sound (n, m) and is a preposition or an adverb",
+          "condition": "When the previous word ends with a nasal sound (n) and is a preposition or an adverb",
           "ipa": ["[g]"]
         }
       ]
@@ -65,7 +65,13 @@
     },
     {
       "letter": "N",
-      "ipa": ["[n]"]
+      "ipa": [
+        "[n]",
+        {
+          "condition": "If the initial letter of the next word is a nasal sound (m) or a labial consonant (b, p)",
+          "ipa": ["[m]"]
+        }
+      ]
     },
     {
       "letter": "O",
@@ -91,11 +97,11 @@
         { "condition": "Before i or e", "ipa": ["[k]"] },
         { "condition": "Qu + Vowel", "ipa": ["[kw]"] },
         {
-          "condition": "When Q appears before i or e as qi or qe while the previous word ends with a nasal sound (n, m) and is a preposition or an adverb",
+          "condition": "When Q appears before i or e as qi or qe while the previous word ends with a nasal sound (n) and is a preposition or an adverb",
           "ipa": ["[g]"]
         },
         {
-          "condition": "When Qu + Vowel appears and the previous word ends with a nasal sound (n, m) and is a preposition or an adverb",
+          "condition": "When Qu + Vowel appears and the previous word ends with a nasal sound (n) and is a preposition or an adverb",
           "ipa": ["[gw]"]
         }
       ]
@@ -131,7 +137,7 @@
       "rules": [
         { "condition": "Default", "ipa": ["[t]"] },
         {
-          "condition": "When the previous word ends with a nasal sound (n, m) and is a preposition or an adverb",
+          "condition": "When the previous word ends with a nasal sound (n) and is a preposition or an adverb",
           "ipa": ["[d]"]
         }
       ]
