@@ -86,7 +86,7 @@
       "rules": [
         { "condition": "Default", "ipa": ["[p]"] },
         {
-          "condition": "When the previous word ends with a nasal sound (n, m) and is a preposition or an adverb",
+          "condition": "When the previous word ends with a nasal sound (m) and is a preposition or an adverb",
           "ipa": ["[b]"]
         }
       ]
