@@ -112,7 +112,7 @@
         [
           "Lor",
           "You (plural formal) / They",
-          "Lor parlatino<br><small class='text-muted'>They speak / Speak (plural formal)</small>"
+          "Lor parlino<br><small class='text-muted'>They speak / Speak (plural formal)</small>"
         ]
       ],
       "note": "Source: PDF Page 17"
@@ -336,19 +336,14 @@
     {
       "id": "indefinite-articles",
       "title": "Indefinite Articles (Page 19)",
-      "columns": ["Gender / Number", "Singular Forms", "Plural Forms"],
+      "columns": ["Gender / Number", "Singular Forms"],
       "rows": [
         [
           "Masculine",
-          "Un (consonant)<br>Um (before M, P, B)<br>Uno (z, x, ps, gn, s+consonant)<br>Un' (vowel or N)",
-          "l' / li / 'i"
+          "Un (consonant)<br>Um (before M, P, B)<br>Uno (z, x, ps, gn, s+consonant)<br>Un' (vowel or N)"
         ],
-        ["Feminine", "Una (consonant)<br>Un' (vowel or N)", "L' / Le / 'E"],
-        [
-          "Neuter",
-          "Unu (consonant)<br>Un' (vowel or N)",
-          "Switches to feminine plural"
-        ]
+        ["Feminine", "Una (consonant)<br>Un' (vowel or N)"],
+        ["Neuter", "Unu (consonant)<br>Un' (vowel or N)"]
       ],
       "note": "Source: PDF Page 19 | Indefinite articles equivalent of (a) and (an)."
     },
@@ -385,32 +380,32 @@
       ],
       "rows": [
         [
-          "Dil / Dila / Dilu (Of the)",
+          "Di/D' + Lo / La / Lu (Of the)",
           "Dil / Dila / Dilu<br>Dil' (vowel / L-starting)<br>Dilo (z, x, ps, gn, s+cons.)",
           "Digli / Diglie<br>Digli' (vowel/pl.)"
         ],
         [
-          "Al / Ala / Alu (To / At the)",
+          "Ad/A' + Lo / La / Lu (To / At the)",
           "Al / Ala / Alu<br>Al' (vowel / L-starting)<br>Alo (z, x, ps, gn, s+cons.)",
           "Agli / Aglie<br>Agli' (vowel/pl.)"
         ],
         [
-          "Dal / Dala / Dalu (From the)",
+          "Da + Lo / La / Lu (From the)",
           "Dal / Dala / Dalu<br>Dal' (vowel / L-starting)<br>Dalo (z, x, ps, gn, s+cons.)",
           "Dagli / Daglie<br>Dagli' (vowel/pl.)"
         ],
         [
-          "Nil / Nila / Nilu (In the)",
+          "In + Lo / La / Lu (In the)",
           "Nil / Nila / Nilu<br>Nil' (vowel / L-starting)<br>Nilo (z, x, ps, gn, s+cons.)",
           "Nigli / Niglie<br>Nigli' (vowel/pl.)"
         ],
         [
-          "Sul / Sula / Sulu (On the)",
+          "Su + Lo / La / Lu (On the)",
           "Sul / Sula / Sulu<br>Sul' (vowel / L-starting)<br>Sulo (z, x, ps, gn, s+cons.)",
           "Sugli / Suglie<br>Sugli' (vowel/pl.)"
         ],
         [
-          "Col / Cola / Colu (With the)",
+          "Con + Lo / La / Lu (With the)",
           "Col / Cola / Colu<br>Col' (vowel / L-starting)<br>Colo (z, x, ps, gn, s+cons.)",
           "Cogli / Coglie<br>Cogli' (vowel/pl.)"
         ]
