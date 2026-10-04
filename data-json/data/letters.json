@@ -70,6 +70,10 @@
         {
           "condition": "If the initial letter of the next word is a nasal sound (m) or a labial consonant (b, p)",
           "ipa": ["[m]"]
+        },
+        {
+          "condition": "If the initial letter of the next word is a velar consonant (g)",
+          "ipa": ["[ŋ]"]
         }
       ]
     },
