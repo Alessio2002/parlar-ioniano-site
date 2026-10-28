@@ -19,7 +19,7 @@
         line-height: 1.5;
         max-width: 900px;
         margin: 2rem auto;
-        padding: 0 1rem 4rem 1rem; /* Added bottom padding to the body */
+        padding: 0 1rem 4rem 1rem;
       }
       table {
         width: 100%;
@@ -35,9 +35,21 @@
       th {
         background-color: #f4f4f4;
       }
-      /* Ensure IPA brackets and special linguistic characters render cleanly */
       td {
         font-family: "Lucida Sans Unicode", "DejaVu Sans", Arial, sans-serif;
+      }
+      /* Custom Orange Button with Glowing Hover Effect */
+      .help-btn-orange {
+        background-color: #fd7e14;
+        border-color: #fd7e14;
+        transition: background-color 0.2s ease, transform 0.2s ease,
+          box-shadow 0.3s ease;
+      }
+      .help-btn-orange:hover {
+        background-color: #e56b0b !important;
+        border-color: #e56b0b !important;
+        transform: translateY(-1px);
+        box-shadow: 0 0 15px rgba(253, 126, 20, 0.8) !important;
       }
     </style>
   </head>
@@ -48,12 +60,22 @@
         <a class="navbar-brand" href="index.html" target="_top"
           >Parlar Ioniano</a
         >
-        <div class="navbar-nav ms-auto">
-          <!-- "Home" link removed -->
+
+        <div class="navbar-nav ms-auto align-items-center">
           <a class="nav-link active" aria-current="page" href="alphabet.html"
             >Alphabet & Pronunciation</a
           >
           <a class="nav-link" href="grammar.html">Pronouns & Grammar</a>
+          <!-- Help Button Trigger (Orange with Hover Glow) -->
+          <button
+            type="button"
+            class="btn btn-sm ms-lg-3 mt-2 mt-lg-0 rounded-pill px-3 text-white fw-bold shadow-sm help-btn-orange"
+            data-bs-toggle="modal"
+            data-bs-target="#ionianoHelpModal"
+            title="What is Parlar Ioniano?"
+          >
+            Help / What is this?
+          </button>
         </div>
       </nav>
     </header>
@@ -62,8 +84,66 @@
       <div id="alphabet-container"></div>
     </main>
 
+    <!-- What is Parlar Ioniano? Modal -->
+    <div
+      class="modal fade text-dark"
+      id="ionianoHelpModal"
+      tabindex="-1"
+      aria-labelledby="ionianoHelpModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #1a4a84; color: white"
+          >
+            <h5 class="modal-title" id="ionianoHelpModalLabel">
+              What is Parlar Ioniano?
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-4">
+            <p>
+              <strong>Parlar Ioniano</strong> is the native documentation portal
+              for <strong>Ionian (Lingua ioniana)</strong>, a detailed
+              constructed romance language featuring three grammatical genders
+              (Masculine, Feminine, Neuter) and comprehensive phonetic and
+              grammatical paradigms[cite: 11, 15]. <br /><br />
+              Lingua ioniana is a constructed language that has been developed
+              independently from Latin, but since it is a romance language, it
+              has many similarities to Latin and other romance languages[cite:
+              11, 15].
+              <br /><br />
+              It is a language that has been developed for the purpose of
+              communication and expression, and it has its own unique grammar,
+              vocabulary, and pronunciation rules[cite: 11, 15].
+            </p>
+            <p class="mb-0 text-muted small">
+              Use the top navigation tabs to explore alphabet rules,
+              pronunciation guides, pronouns, and structural grammar
+              matrices[cite: 11, 15].
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary btn-sm"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
-      // Automatically hide header if viewed inside the index.html iframe to prevent duplication
       if (window.self !== window.top) {
         const header = document.getElementById("page-header");
         if (header) {
@@ -76,7 +156,6 @@
       import { renderAlphabetPage } from "./js/data.js";
       renderAlphabetPage("alphabet-container", "data-json/data/letters.json");
     </script>
-    <!-- Pinned Bootstrap JS Bundle CDN with Integrity Hash -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

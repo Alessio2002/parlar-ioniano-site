@@ -11,7 +11,7 @@
     {
       "letter": "C",
       "rules": [
-        { "condition": "Before i or e", "ipa": ["[t͡ʃ]"] },
+        { "condition": "When 'c' appears before i or e", "ipa": ["[t͡ʃ]"] },
         { "condition": "Otherwise", "ipa": ["[k]"] },
         {
           "condition": "When the previous word ends with a nasal sound (n) and is a preposition or an adverb",
@@ -39,7 +39,7 @@
     {
       "letter": "G",
       "rules": [
-        { "condition": "Before i or e", "ipa": ["[d͡ʒ]"] },
+        { "condition": "When 'g' appears before i or e", "ipa": ["[d͡ʒ]"] },
         { "condition": "Otherwise", "ipa": ["[g]"] }
       ]
     },
@@ -67,8 +67,8 @@
       "letter": "N",
       "ipa": [
         "[n]",
-        "/ Becomes [m] (when the next word starts with a nasal sound (m) or labial consonant (b, p)",
-        "[ŋ] (When the next word starts with a velar consonant g)"
+        "[m] (when the next word starts with a nasal sound (m) or labial consonant (b, p))",
+        "[ŋ] (when the next word starts with a velar consonant g)"
       ]
     },
     {
@@ -92,7 +92,7 @@
     {
       "letter": "Q",
       "rules": [
-        { "condition": "Before i or e", "ipa": ["[k]"] },
+        { "condition": "When 'q' appears before i or e", "ipa": ["[k]"] },
         { "condition": "Qu + Vowel", "ipa": ["[kw]"] },
         {
           "condition": "When Q appears before i or e as qi or qe while the previous word ends with a nasal sound (n) and is a preposition or an adverb",
@@ -198,7 +198,7 @@
       {
         "pattern": "Sc",
         "rules": [
-          { "condition": "Before i or e", "ipa": ["[ʃ]"] },
+          { "condition": "When 'sc' appears before i or e", "ipa": ["[ʃ]"] },
           { "condition": "Otherwise", "ipa": ["[k]"] }
         ]
       }

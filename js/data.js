@@ -21,6 +21,70 @@ export async function renderAlphabetPage(containerId, filePath) {
 
     let html = `<h1>Ionian Alphabet & Pronunciation</h1>`;
 
+    // Collapsible & Non-Linguist Friendly Complete IPA Guide with Dividers
+    html += `
+      <div class="card mb-4 shadow-sm border-secondary">
+        <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center" style="cursor: pointer;" data-bs-toggle="collapse" data-bs-target="#ipaLegendCollapse" aria-expanded="false" aria-controls="ipaLegendCollapse">
+          <span class="fw-bold">📖 Pronunciation Help: How to Read the IPA Symbols (Click to expand/collapse)</span>
+          <span class="badge bg-light text-dark">▼ Toggle Guide</span>
+        </div>
+        <div class="collapse" id="ipaLegendCollapse">
+          <div class="card-body bg-light">
+            <p class="text-muted small mb-3">Not familiar with linguistic symbols? Here is a simple everyday guide to what each sound represents:</p>
+            
+            <h6 class="text-dark fw-bold mb-2">Vowels</h6>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 small mb-3">
+              <div class="col"><code>[a]</code> — open 'a' (like the 'a' in <em>father</em>)</div>
+              <div class="col"><code>[e]</code> — closed 'e' (like the 'e' in <em>cafe</em>)</div>
+              <div class="col"><code>[ɛ]</code> — open 'è' (like the 'e' in <em>bed</em>)</div>
+              <div class="col"><code>[i]</code> — 'ee' sound (like the 'i' in <em>machine</em>)</div>
+              <div class="col"><code>[o]</code> — closed 'o' (like the 'o' in <em>note</em>)</div>
+              <div class="col"><code>[ɔ]</code> — open 'ò' (like the 'o' in <em>thought</em>)</div>
+              <div class="col"><code>[u]</code> — 'oo' sound (like the 'u' in <em>boot</em>)</div>
+            </div>
+
+            <hr class="my-3">
+
+            <h6 class="text-dark fw-bold mb-2">Consonants & Special Sounds</h6>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 small mb-3">
+              <div class="col"><code>[b]</code> — standard 'b' sound</div>
+              <div class="col"><code>[d]</code> — standard 'd' sound</div>
+              <div class="col"><code>[f]</code> — standard 'f' sound</div>
+              <div class="col"><code>[g]</code> — hard 'g' sound (as in <em>go</em>)</div>
+              <div class="col"><code>[j]</code> — 'y' sound (as in <em>yes</em>)</div>
+              <div class="col"><code>[k]</code> — hard 'k' sound (as in <em>kite</em>)</div>
+              <div class="col"><code>[l]</code> — standard 'l' sound</div>
+              <div class="col"><code>[m]</code> — standard 'm' sound</div>
+              <div class="col"><code>[n]</code> — standard 'n' sound</div>
+              <div class="col"><code>[p]</code> — standard 'p' sound</div>
+              <div class="col"><code>[v]</code> — 'v' sound (as in <em>victory</em>)</div>
+              <div class="col"><code>[z]</code> — buzzing 'z' sound (as in <em>zero</em>)</div>
+              <div class="col"><code>[s]</code> — sharp 's' sound (as in <em>snake</em>)</div>
+              <div class="col"><code>[s.s]</code> — double 's' sound (as in <em>pass</em>)</div>
+              <div class="col"><code>[t]</code> — standard 't' sound</div>
+              <div class="col"><code>[r]</code> — rolled 'r' sound (as in Italian <em>bravo</em>)</div>
+              <div class="col"><code>[ɾ]</code> — quick tapped 'r' sound (as in Italian <em>caro</em>)</div>
+              <div class="col"><code>[r.r]</code> — double rolled 'r' sound (as in Italian <em>carro</em>)</div>
+            </div>
+
+            <hr class="my-3">
+
+            <h6 class="text-dark fw-bold mb-2">Combinations & Complex Sounds</h6>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 small">
+              <div class="col"><code>[t͡ʃ]</code> — 'ch' sound (as in <em>cheese</em>)</div>
+              <div class="col"><code>[d͡ʒ]</code> — 'j' sound (as in <em>jump</em>)</div>
+              <div class="col"><code>[ʃ]</code> — 'sh' sound (as in <em>shoe</em>)</div>
+              <div class="col"><code>[ɲ]</code> — 'ny' sound (as in <em>canyon</em>)</div>
+              <div class="col"><code>[ŋ]</code> — 'ng' sound (as in <em>sing</em>)</div>
+              <div class="col"><code>[θ]</code> — 'th' sound (as in <em>think</em>)</div>
+              <div class="col"><code>[x]</code> — clearing-throat sound (as in Scottish <em>loch</em>)</div>
+              <div class="col"><code>[w]</code> — quick 'w' glide sound</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
     // Alphabet Section
     html += `<h2>Alphabet</h2><table><thead><tr><th>Letter</th><th>IPA / Rules</th></tr></thead><tbody>`;
     data.alphabet.forEach((item) => {
