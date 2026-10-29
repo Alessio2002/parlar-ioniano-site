@@ -26,10 +26,10 @@
     {
       "letter": "E",
       "variants": [
-        { "form": "E", "ipa": ["[e]"] },
+        { "form": "E (unstressed)", "ipa": ["[e]"] },
         { "form": "È", "ipa": ["[ɛ]"] },
         { "form": "E (stressed)", "ipa": ["[ɛ]"] },
-        { "form": "É (unstressed)", "ipa": ["[e]"] }
+        { "form": "É (stressed)", "ipa": ["[e]"] }
       ]
     },
     {

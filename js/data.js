@@ -36,6 +36,7 @@ export async function renderAlphabetPage(containerId, filePath) {
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 small mb-3">
               <div class="col"><code>[a]</code> — open 'a' (like the 'a' in <em>father</em>)</div>
               <div class="col"><code>[e]</code> — closed 'e' (like the 'e' in <em>cafe</em>)</div>
+              <div class="col"><code>[e]</code> — closed 'é' (like the 'e' in <em>bed</em>, but emphasised with a slight rise in pitch and loudness)</div>
               <div class="col"><code>[ɛ]</code> — open 'è' (like the 'e' in <em>bed</em>)</div>
               <div class="col"><code>[i]</code> — 'ee' sound (like the 'i' in <em>machine</em>)</div>
               <div class="col"><code>[o]</code> — closed 'o' (like the 'o' in <em>note</em>)</div>
