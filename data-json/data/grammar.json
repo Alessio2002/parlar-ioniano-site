@@ -206,7 +206,7 @@
           "Me lu<br><small class='text-muted'>To me + it (neut.)</small>",
           "Me li<br><small class='text-muted'>To me + them (masc.)</small>",
           "Me le<br><small class='text-muted'>To me + them (fem.)</small>",
-          "Me ne / me n'<br><small class='text-muted'>To me + of it / some of it</small>"
+          "Me ne / me n'<br><small class='text-muted'>To me + of it/them / some of it/them / about it/them</small>"
         ],
         [
           "ti",
@@ -215,16 +215,16 @@
           "Te lu<br><small class='text-muted'>To you + it (neut.)</small>",
           "Te li<br><small class='text-muted'>To you + them (masc.)</small>",
           "Te le<br><small class='text-muted'>To you + them (fem.)</small>",
-          "Te ne / te n'<br><small class='text-muted'>To you + of it / some of it</small>"
+          "Te ne / te n'<br><small class='text-muted'>To you + of it/them / some of it/them / about it/them/small>"
         ],
         [
           "li, le",
-          "Liglio<br><small class='text-muted'>To them/him/her + it (masc.)</small>",
-          "Liglia<br><small class='text-muted'>To them/him/her + it (fem.)</small>",
-          "Ligliu<br><small class='text-muted'>To them/him/her + it (neut.)</small>",
-          "Ligli<br><small class='text-muted'>To them/him/her + them (masc.)</small>",
-          "Liglie<br><small class='text-muted'>To them/him/her + them (fem.)</small>",
-          "Lene / len'<br><small class='text-muted'>To them/him/her + of it / some of it</small>"
+          "Liglio<br><small class='text-muted'>To him/her + it (masc.)</small>",
+          "Liglia<br><small class='text-muted'>To him/her + it (fem.)</small>",
+          "Ligliu<br><small class='text-muted'>To him/her + it (neut.)</small>",
+          "Ligli<br><small class='text-muted'>To him/her + them (masc.)</small>",
+          "Liglie<br><small class='text-muted'>To him/her + them (fem.)</small>",
+          "Lene / len'<br><small class='text-muted'>To him/her + of it/them / some of it/them / about it/them</small>"
         ],
         [
           "ce",
@@ -233,7 +233,7 @@
           "Ce lu<br><small class='text-muted'>To us + it (neut.)</small>",
           "Ce li<br><small class='text-muted'>To us + them (masc.)</small>",
           "Ce le<br><small class='text-muted'>To us + them (fem.)</small>",
-          "Ce ne / ce n'<br><small class='text-muted'>To us + of it / some of it</small>"
+          "Ce ne / ce n'<br><small class='text-muted'>To us + of it/them / some of it/them / about it/them</small>"
         ],
         [
           "vi",
@@ -242,7 +242,7 @@
           "Ve lu<br><small class='text-muted'>To you pl. + it (neut.)</small>",
           "Ve li<br><small class='text-muted'>To you pl. + them (masc.)</small>",
           "Ve le<br><small class='text-muted'>To you pl. + them (fem.)</small>",
-          "Ve ne / ve n'<br><small class='text-muted'>To you pl. + of it / some of it</small>"
+          "Ve ne / ve n'<br><small class='text-muted'>To you pl. + of it/them / some of it/them / about it/them</small>"
         ],
         [
           "lì",
@@ -251,7 +251,7 @@
           "Ligliu<br><small class='text-muted'>To them + it (neut.)</small>",
           "Ligli<br><small class='text-muted'>To them + them (masc.)</small>",
           "Liglie<br><small class='text-muted'>To them + them (fem.)</small>",
-          "Lene / len'<br><small class='text-muted'>To them + of it / some of it</small>"
+          "Lene / len'<br><small class='text-muted'>To them + of it/them / some of it/them / about it/them</small>"
         ]
       ],
       "note": "Source: PDF Pages 23–26 | Usage & Rules: -ne / -n' means 'about it, some of it, of it, about/some/of them' (-n' is used before vowels or the letter N). Neuter double objects shift to feminine plural in the plural form. Double object pronouns never carry word stress. For imperatives (e.g., Dimene - 'Tell me about it'), drop the final '-r' of the infinitive."
@@ -268,7 +268,7 @@
           "Me lu<br><small class='text-muted'>To myself + it (neut.)</small>",
           "Me li<br><small class='text-muted'>To myself + them (masc.)</small>",
           "Me le<br><small class='text-muted'>To myself + them (fem.)</small>",
-          "Me ne / me n'<br><small class='text-muted'>To myself + of it / some of it</small>"
+          "Me ne / me n'<br><small class='text-muted'>To myself + of it/them / some of it/them / about it/them</small>"
         ],
         [
           "ti",
@@ -277,7 +277,7 @@
           "Te lu<br><small class='text-muted'>To yourself + it (neut.)</small>",
           "Te li<br><small class='text-muted'>To yourself + them (masc.)</small>",
           "Te le<br><small class='text-muted'>To yourself + them (fem.)</small>",
-          "Te ne / te n'<br><small class='text-muted'>To yourself + of it / some of it</small>"
+          "Te ne / te n'<br><small class='text-muted'>To yourself + of it/them / some of it/them / about it/them</small>"
         ],
         [
           "se",
@@ -286,7 +286,7 @@
           "Se lu<br><small class='text-muted'>To self + it (neut.)</small>",
           "Se li<br><small class='text-muted'>To self + them (masc.)</small>",
           "Se le<br><small class='text-muted'>To self + them (fem.)</small>",
-          "Se ne / se n'<br><small class='text-muted'>To self + of it / some of it</small>"
+          "Se ne / se n'<br><small class='text-muted'>To self + of it/them / some of it/them / about it/them</small>"
         ],
         [
           "ce",
@@ -295,7 +295,7 @@
           "Ce lu<br><small class='text-muted'>To ourselves + it (neut.)</small>",
           "Ce li<br><small class='text-muted'>To ourselves + them (masc.)</small>",
           "Ce le<br><small class='text-muted'>To ourselves + them (fem.)</small>",
-          "Ce ne / te n'<br><small class='text-muted'>To ourselves + of it / some of it</small>"
+          "Ce ne / te n'<br><small class='text-muted'>To ourselves + of it/them / some of it/them / about it/them</small>"
         ],
         [
           "vi",
@@ -304,7 +304,7 @@
           "Ve lu<br><small class='text-muted'>To yourselves + it (neut.)</small>",
           "Ve li<br><small class='text-muted'>To yourselves + them (masc.)</small>",
           "Ve le<br><small class='text-muted'>To yourselves + them (fem.)</small>",
-          "Me ne / me n'<br><small class='text-muted'>To yourselves + of it / some of it</small>"
+          "Me ne / me n'<br><small class='text-muted'>To yourselves + of it/them / some of it/them / about it/them</small>"
         ],
         [
           "si",
@@ -313,7 +313,7 @@
           "Si lu<br><small class='text-muted'>To themselves + it (neut.)</small>",
           "Si li<br><small class='text-muted'>To themselves + them (masc.)</small>",
           "Si le<br><small class='text-muted'>To themselves + them (fem.)</small>",
-          "Si ne / si n'<br><small class='text-muted'>To themselves + of it / some of it</small>"
+          "Si ne / si n'<br><small class='text-muted'>To themselves + of it/them / some of it/them / about it/them</small>"
         ]
       ],
       "note": "Source: PDF Page 24 | Formula & Structure: Reflexive double objects combine clitics with reflexive pronouns placed directly before verbs."
