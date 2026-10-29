@@ -21,7 +21,7 @@ export async function renderAlphabetPage(containerId, filePath) {
 
     let html = `<h1>Ionian Alphabet & Pronunciation</h1>`;
 
-    // Collapsible & Non-Linguist Friendly Complete IPA Guide with Dividers
+    // Collapsible & Non-Linguist Friendly Complete IPA Guide with Dividers & Stress/Marker Explanations
     html += `
       <div class="card mb-4 shadow-sm border-secondary">
         <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center" style="cursor: pointer;" data-bs-toggle="collapse" data-bs-target="#ipaLegendCollapse" aria-expanded="false" aria-controls="ipaLegendCollapse">
@@ -30,7 +30,7 @@ export async function renderAlphabetPage(containerId, filePath) {
         </div>
         <div class="collapse" id="ipaLegendCollapse">
           <div class="card-body bg-light">
-            <p class="text-muted small mb-3">Not familiar with linguistic symbols? Here is a simple everyday guide to what each sound represents:</p>
+            <p class="text-muted small mb-3">Not familiar with linguistic symbols? Here is a simple everyday guide to what each sound and marker represents:</p>
             
             <h6 class="text-dark fw-bold mb-2">Vowels</h6>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 small mb-3">
@@ -65,12 +65,13 @@ export async function renderAlphabetPage(containerId, filePath) {
               <div class="col"><code>[r]</code> — rolled 'r' sound (as in Italian <em>bravo</em>)</div>
               <div class="col"><code>[ɾ]</code> — quick tapped 'r' sound (as in Italian <em>caro</em>)</div>
               <div class="col"><code>[r.r]</code> — double rolled 'r' sound (as in Italian <em>carro</em>)</div>
+              <div class="col"><code>[ɟ]</code> — like 'y' in yes, but the tongue is pressed tightly into the roof of the mouth</div>
             </div>
 
             <hr class="my-3">
 
             <h6 class="text-dark fw-bold mb-2">Combinations & Complex Sounds</h6>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 small">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 small mb-3">
               <div class="col"><code>[t͡ʃ]</code> — 'ch' sound (as in <em>cheese</em>)</div>
               <div class="col"><code>[d͡ʒ]</code> — 'j' sound (as in <em>jump</em>)</div>
               <div class="col"><code>[ʃ]</code> — 'sh' sound (as in <em>shoe</em>)</div>
@@ -79,6 +80,15 @@ export async function renderAlphabetPage(containerId, filePath) {
               <div class="col"><code>[θ]</code> — 'th' sound (as in <em>think</em>)</div>
               <div class="col"><code>[x]</code> — clearing-throat sound (as in Scottish <em>loch</em>)</div>
               <div class="col"><code>[w]</code> — quick 'w' glide sound</div>
+            </div>
+
+            <hr class="my-3">
+
+            <h6 class="text-dark fw-bold mb-2">Phonetic Markers & Symbols</h6>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 small">
+              <div class="col"><code>[ˈ]</code> — primary stress mark (placed right before the stressed syllable)</div>
+              <div class="col"><code><'></code> — apostrophe (') is used as an elision marker</div>
+              <div class="col"><code>Elision</code> — is the omission of a sound, vowel, consonant, or syllable within a word or between words to make speech faster, smoother, and easier to pronounce</div>
             </div>
           </div>
         </div>
@@ -131,11 +141,74 @@ export async function renderAlphabetPage(containerId, filePath) {
     });
     html += `</tbody></table>`;
 
-    // Phonetics Overview
+    // Phonetics Overview Section
     if (data.phonetics_overview) {
       html += `<h2>Phonetics Overview</h2>
-                     <p><strong>Vowels:</strong> ${data.phonetics_overview.vowels}</p>
-                     <p><strong>Consonants:</strong> ${data.phonetics_overview.consonants}</p>`;
+               <p><strong>Vowels:</strong> ${data.phonetics_overview.vowels}</p>
+               <p><strong>Consonants:</strong> ${data.phonetics_overview.consonants}</p>`;
+    }
+
+    // Phonetic Features Section
+    if (data.phonetic_features && data.phonetic_features.length > 0) {
+      html += `<h2>Phonetic Features</h2><ul>`;
+      data.phonetic_features.forEach((feature) => {
+        html += `<li>${feature}</li>`;
+      });
+      html += `</ul>`;
+    }
+
+    // Diacritics and Special Combinations Section
+    if (data.diacritics_and_combinations) {
+      const dio = data.diacritics_and_combinations;
+      html += `<h2>Diacritics & Combinations</h2>`;
+      if (dio.diacritics_overview) {
+        html += `<p>${dio.diacritics_overview}</p>`;
+      }
+
+      // Specific combinations table
+      if (dio.specific_combinations && dio.specific_combinations.length > 0) {
+        html += `<h3>Specific Combinations</h3><table><thead><tr><th>Pattern</th><th>IPA / Notes</th></tr></thead><tbody>`;
+        dio.specific_combinations.forEach((c) => {
+          const ipaStr = Array.isArray(c.ipa) ? c.ipa.join(" — ") : c.ipa;
+          html += `<tr><td><strong>${c.pattern}</strong></td><td>${ipaStr}</td></tr>`;
+        });
+        html += `</tbody></table>`;
+      }
+
+      // Usage notes
+      if (dio.diacritic_usage_notes && dio.diacritic_usage_notes.length > 0) {
+        html += `<h3>Usage Notes</h3><ul>`;
+        dio.diacritic_usage_notes.forEach((note) => {
+          html += `<li>${note}</li>`;
+        });
+        html += `</ul>`;
+      }
+
+      // Postalveolar Sequences (Corrected Terminology)
+      if (dio.postalveolar_sequences && dio.postalveolar_sequences.length > 0) {
+        html += `<h3>Postalveolar Sequences</h3><table><thead><tr><th>Pattern</th><th>IPA</th></tr></thead><tbody>`;
+        dio.postalveolar_sequences.forEach((p) => {
+          html += `<tr><td><strong>${p.pattern}</strong></td><td>${p.ipa}</td></tr>`;
+        });
+        html += `</tbody></table>`;
+      }
+
+      // Extra rules for C, G, SC
+      if (dio.extra_rules_c_g_sc && dio.extra_rules_c_g_sc.length > 0) {
+        html += `<h3>Extra Rules for C, G, SC</h3><table><thead><tr><th>Pattern</th><th>IPA / Rules</th></tr></thead><tbody>`;
+        dio.extra_rules_c_g_sc.forEach((rule) => {
+          let ruleDetail = "";
+          if (rule.ipa) {
+            ruleDetail = rule.ipa;
+          } else if (rule.rules) {
+            ruleDetail = rule.rules
+              .map((r) => `${r.condition}: ${r.ipa}`)
+              .join("<br>");
+          }
+          html += `<tr><td><strong>${rule.pattern}</strong></td><td>${ruleDetail}</td></tr>`;
+        });
+        html += `</tbody></table>`;
+      }
     }
 
     // Digraphs Section

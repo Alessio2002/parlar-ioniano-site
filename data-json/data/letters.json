@@ -171,22 +171,30 @@
     "diacritics_overview": "Ionian features three diacritics: Grave, Acute, and Circumflex.",
     "specific_combinations": [
       { "pattern": "c + ì + vowel", "ipa": ["[t͡ʃj]"] },
-      { "pattern": "c + í + vowel", "ipa": ["[t͡ʃˈi]"] },
+      { "pattern": "c + í + vowel", "ipa": ["['t͡ʃi]"] },
       { "pattern": "g + ì + vowel", "ipa": ["[d͡ʒj]"] },
-      { "pattern": "g + í + vowel", "ipa": ["[d͡ʒˈi]"] },
+      { "pattern": "g + í + vowel", "ipa": ["['d͡ʒi]"] },
       { "pattern": "sc + ì + vowel", "ipa": ["[ʃj]"] },
-      { "pattern": "sc + í + vowel", "ipa": ["[ʃˈi]"] },
+      { "pattern": "sc + í + vowel", "ipa": ["['ʃi]"] },
       {
         "pattern": "û + i",
         "ipa": ["[ui̯]", "Does not carry stress of its own"]
+      },
+      {
+        "pattern": "(preposition - of - before consonant) - di + j + vowel",
+        "ipa": ["[ɟ]"]
+      },
+      {
+        "pattern": "(preposition - of - before vowel) - d' + i + vowel",
+        "ipa": ["[ɟ]"]
       }
     ],
     "diacritic_usage_notes": [
       "Grave marker (`) distinguishes homonyms, marks stress position, and marks closed E [e] / O [o] versus open È [ɛ] / Ò [ɔ].",
       "É appears always as closed [e].",
-      "Circumflex (^) distinguishes ûi /ui̯/ from ui /wi/."
+      "Circumflex (^) distinguishes ûi /ui̯/ from ui /wi/. The circumflex is used in the diphthong ûi and doesn't mark stress."
     ],
-    "palatal_vowel_combinations": [
+    "postalveolar_sequences": [
       { "pattern": "ci + a / o / u", "ipa": ["[t͡ʃa] / [t͡ʃo] / [t͡ʃu]"] },
       { "pattern": "gi + a / o / u", "ipa": ["[d͡ʒa] / [d͡ʒo] / [d͡ʒu]"] },
       { "pattern": "sci + a / o / u", "ipa": ["[ʃa] / [ʃo] / [ʃu]"] }
