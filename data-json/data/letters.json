@@ -65,10 +65,16 @@
     },
     {
       "letter": "N",
-      "ipa": [
-        "[n]",
-        "[m] when the next word starts with a nasal sound [m] or labial consonants [b] or [p]",
-        "[ŋ] when the next word starts with velar consonants [k] or [g]"
+      "rules": [
+        { "condition": "Default", "ipa": ["[n]"] },
+        {
+          "condition": "When the previous word ends with a nasal sound [m] or labial consonants [b] or [p]",
+          "ipa": ["[m]"]
+        },
+        {
+          "condition": "When the next word starts with velar consonants [k] or [g]",
+          "ipa": ["[ŋ]"]
+        }
       ]
     },
     {
