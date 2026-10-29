@@ -68,7 +68,7 @@
       "ipa": [
         "[n]",
         "[m] (when the next word starts with a nasal sound (m) or labial consonant (b, p)",
-        "[ŋ] (when the next word starts with a velar consonant g)"
+        "[ŋ] (when the next word starts with velar consonants k or g)"
       ]
     },
     {
