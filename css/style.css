@@ -25,3 +25,42 @@ body {
 .navbar .nav-link:hover {
   color: #d1e1f0 !important;
 }
+
+/* --- Mobile Responsiveness Additions (Keeps PC layout 100% intact) --- */
+@media (max-width: 768px) {
+  /* Fluid body padding on mobile devices with extra bottom cushion */
+  body {
+    padding: 0.5rem 0.5rem 3.5rem 0.5rem !important;
+    margin: 0.5rem auto !important;
+  }
+
+  /* Extra bottom padding specifically for main content containers */
+  main {
+    padding-bottom: 3rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Scale headers gracefully on small phone screens */
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  h2 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Make iframe adapt cleanly on mobile viewports */
+  .iframe-container {
+    height: calc(100vh - 75px) !important;
+  }
+
+  /* Prevent table overflow and enable smooth touch scrolling on phones */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ensure dropdown menus don't clip off small viewports */
+  .dropdown-menu {
+    max-width: 85vw;
+  }
+}

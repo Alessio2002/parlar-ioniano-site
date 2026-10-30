@@ -46,28 +46,57 @@
     </style>
   </head>
   <body>
-    <!-- Consistent Shared Navigation Shell -->
-    <header class="mb-4 pt-3 px-3">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded px-3">
+    <!-- Consistent Shared Navigation Shell with Dropdown Menu -->
+    <header class="mb-4 pt-3 px-3" id="page-header">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark rounded px-3"
+        style="background-color: #1a4a84 !important"
+      >
         <a class="navbar-brand" href="index.html">Parlar Ioniano</a>
 
-        <div class="navbar-nav ms-auto align-items-center">
-          <a class="nav-link" href="alphabet.html" target="content-frame"
-            >Alphabet & Pronunciation</a
-          >
-          <a class="nav-link" href="grammar.html" target="content-frame"
-            >Pronouns & Grammar</a
-          >
-          <!-- Help Button Trigger (Orange with Hover Glow) -->
+        <!-- Dropdown Menu -->
+        <div class="dropdown ms-auto">
           <button
+            class="btn btn-outline-light dropdown-toggle fw-bold fs-5 px-4 py-1.5 rounded-pill"
             type="button"
-            class="btn btn-sm ms-lg-3 mt-2 mt-lg-0 rounded-pill px-3 text-white fw-bold shadow-sm help-btn-orange"
-            data-bs-toggle="modal"
-            data-bs-target="#ionianoHelpModal"
-            title="What is Parlar Ioniano?"
+            id="ionianoNavDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
           >
-            Help / What is this?
+            Navigation Menu
           </button>
+          <ul
+            class="dropdown-menu dropdown-menu-end shadow-sm"
+            aria-labelledby="ionianoNavDropdown"
+          >
+            <li>
+              <a
+                class="dropdown-item"
+                href="alphabet.html"
+                target="content-frame"
+                >Alphabet & Pronunciation</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="grammar.html"
+                target="content-frame"
+                >Pronouns & Grammar</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item fw-bold text-orange"
+                data-bs-toggle="modal"
+                data-bs-target="#ionianoHelpModal"
+              >
+                Help / What is this?
+              </button>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -120,7 +149,7 @@
               vocabulary, and pronunciation rules.
             </p>
             <p class="mb-0 text-muted small">
-              Use the top navigation tabs to explore alphabet rules,
+              Use the top navigation menu to explore alphabet rules,
               pronunciation guides, pronouns, and structural grammar matrices.
             </p>
           </div>
