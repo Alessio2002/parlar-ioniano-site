@@ -9,6 +9,7 @@ body {
   max-width: 1920px !important;
   margin: 2rem auto !important;
   padding: 0 1rem !important;
+  overflow-x: hidden; /* Prevents global horizontal viewport scrolling */
 }
 
 /* Custom Navbar Styling matching Ionian document blue */
@@ -53,14 +54,44 @@ body {
     height: calc(100vh - 75px) !important;
   }
 
-  /* Prevent table overflow and enable smooth touch scrolling on phones */
+  /* Force tables and layout containers to fit inside screen boundaries */
   .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden !important; /* Disables inner horizontal scrolling */
+    width: 100% !important;
+  }
+
+  table {
+    table-layout: fixed !important; /* Forces columns to fit within exact screen width */
+    width: 100% !important;
+    word-wrap: break-word !important; /* Enables automatic word wrapping for long text */
+    word-break: break-word !important;
+  }
+
+  th,
+  td {
+    white-space: normal !important; /* Allows table text to break into multiple lines */
+    padding: 0.4rem 0.3rem !important; /* Compact cell padding for mobile */
+    font-size: 0.85rem !important; /* Slightly smaller text for better fit */
   }
 
   /* Ensure dropdown menus don't clip off small viewports */
   .dropdown-menu {
     max-width: 85vw;
+  }
+}
+
+/* --- Mobile Landscape Variant Optimization --- */
+@media (max-width: 900px) and (orientation: landscape) {
+  body {
+    padding: 0.5rem 1rem 3rem 1rem !important;
+  }
+
+  .iframe-container {
+    height: calc(100vh - 65px) !important;
+  }
+
+  /* Compact header margins in landscape mode to maximize vertical viewing area */
+  header.mb-4 {
+    margin-bottom: 1rem !important;
   }
 }
