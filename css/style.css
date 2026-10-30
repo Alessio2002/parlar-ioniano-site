@@ -31,11 +31,12 @@ body {
 @media (max-width: 992px) {
   /* Ensure the body and iframe align 100% to screen edges */
   body {
-    padding: 0.5rem !important;
+    padding: 0.25rem !important;
     margin: 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+    min-height: 100vh;
   }
 
   main,
@@ -47,6 +48,17 @@ body {
     margin-right: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+
+  /* Make iframe fill the full screen height dynamically on mobile */
+  .iframe-container {
+    height: calc(100vh - 65px) !important;
+  }
+
+  iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
   }
 
   /* Make header span edge-to-edge with the rest of the content */
@@ -92,15 +104,16 @@ body {
 /* --- Mobile Landscape Specific Adjustments --- */
 @media (max-width: 992px) and (orientation: landscape) {
   body {
-    padding: 0.25rem 0.5rem 2.5rem 0.5rem !important;
+    padding: 0.15rem 0.25rem 1rem 0.25rem !important;
+    min-height: 100vh;
   }
 
   .iframe-container {
-    height: calc(100vh - 65px) !important;
+    height: calc(100vh - 55px) !important;
   }
 
   header.mb-4,
   header.mb-3 {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
   }
 }
