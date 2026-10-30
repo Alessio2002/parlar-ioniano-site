@@ -4,12 +4,12 @@
     Arial, sans-serif;
 }
 
-/* Restore the centered layout container box for the alphabet page */
+/* Restore the centered layout container box for desktop */
 body {
   max-width: 1920px !important;
   margin: 2rem auto !important;
   padding: 0 1rem !important;
-  overflow-x: hidden; /* Prevents global horizontal viewport scrolling */
+  overflow-x: hidden;
 }
 
 /* Custom Navbar Styling matching Ionian document blue */
@@ -27,71 +27,80 @@ body {
   color: #d1e1f0 !important;
 }
 
-/* --- Mobile Responsiveness Additions (Keeps PC layout 100% intact) --- */
-@media (max-width: 768px) {
-  /* Fluid body padding on mobile devices with extra bottom cushion */
+/* --- Mobile Responsiveness (Portrait & Landscape Alignment) --- */
+@media (max-width: 992px) {
+  /* Ensure the body and iframe align 100% to screen edges */
   body {
-    padding: 0.5rem 0.5rem 3.5rem 0.5rem !important;
-    margin: 0.5rem auto !important;
-  }
-
-  /* Extra bottom padding specifically for main content containers */
-  main {
-    padding-bottom: 3rem !important;
-    margin-bottom: 2rem !important;
-  }
-
-  /* Scale headers gracefully on small phone screens */
-  h1 {
-    font-size: 1.5rem !important;
-  }
-  h2 {
-    font-size: 1.25rem !important;
-  }
-
-  /* Make iframe adapt cleanly on mobile viewports */
-  .iframe-container {
-    height: calc(100vh - 75px) !important;
-  }
-
-  /* Force tables and layout containers to fit inside screen boundaries */
-  .table-responsive {
-    overflow-x: hidden !important; /* Disables inner horizontal scrolling */
+    padding: 0.5rem !important;
+    margin: 0 auto !important;
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  main,
+  .container,
+  .iframe-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Make header span edge-to-edge with the rest of the content */
+  #page-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Contain Accordion cards and Tables so they can't spill outside header bounds */
+  .accordion,
+  .accordion-item,
+  .table-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
 
   table {
-    table-layout: fixed !important; /* Forces columns to fit within exact screen width */
+    table-layout: fixed !important;
     width: 100% !important;
-    word-wrap: break-word !important; /* Enables automatic word wrapping for long text */
-    word-break: break-word !important;
+    max-width: 100% !important;
   }
 
   th,
   td {
-    white-space: normal !important; /* Allows table text to break into multiple lines */
-    padding: 0.4rem 0.3rem !important; /* Compact cell padding for mobile */
-    font-size: 0.85rem !important; /* Slightly smaller text for better fit */
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    padding: 0.4rem 0.3rem !important;
   }
 
-  /* Ensure dropdown menus don't clip off small viewports */
+  /* Ensure dropdown menu stays within screen bounds */
   .dropdown-menu {
     max-width: 85vw;
   }
 }
 
-/* --- Mobile Landscape Variant Optimization --- */
-@media (max-width: 900px) and (orientation: landscape) {
+/* --- Mobile Landscape Specific Adjustments --- */
+@media (max-width: 992px) and (orientation: landscape) {
   body {
-    padding: 0.5rem 1rem 3rem 1rem !important;
+    padding: 0.25rem 0.5rem 2.5rem 0.5rem !important;
   }
 
   .iframe-container {
     height: calc(100vh - 65px) !important;
   }
 
-  /* Compact header margins in landscape mode to maximize vertical viewing area */
-  header.mb-4 {
-    margin-bottom: 1rem !important;
+  header.mb-4,
+  header.mb-3 {
+    margin-bottom: 0.5rem !important;
   }
 }
