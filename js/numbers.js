@@ -103,49 +103,52 @@ function convertHundreds(n, gender = "masc") {
 export function numberToIonian(num, gender = "masc") {
   const n = parseInt(num, 10);
 
-  if (isNaN(n) || n < 0 || n > 999999999999999) {
+  if (isNaN(n) || n < -999999999999999 || n > 999999999999999) {
     throw new RangeError(
-      "Input must be a valid integer between 0 and 999,999,999,999,999."
+      "Input must be a valid integer between -999,999,999,999,999 and 999,999,999,999,999."
     );
   }
 
   if (n === 0) return UNITS[0];
 
-  const activeGender = gender === "neut" && n >= 2 ? "fem" : gender;
+  const isNegative = n < 0;
+  const absN = Math.abs(n);
 
-  if (n < 1000) {
-    return convertHundreds(n, activeGender);
-  }
+  const activeGender = gender === "neut" && absN >= 2 ? "fem" : gender;
 
   let result = "";
-  let remaining = n;
 
-  for (const scale of SCALES) {
-    if (remaining >= scale.value) {
-      const count = Math.floor(remaining / scale.value);
-      remaining %= scale.value;
+  if (absN < 1000) {
+    result = convertHundreds(absN, activeGender);
+  } else {
+    let remaining = absN;
 
-      if (count === 1) {
-        result += (result ? " " : "") + scale.singular;
-      } else {
-        let prefix = convertHundreds(count, "masc");
-        if (/^[aeiouàèéìòù]/i.test(scale.plural) && prefix.endsWith("o")) {
-          prefix = prefix.slice(0, -1);
+    for (const scale of SCALES) {
+      if (remaining >= scale.value) {
+        const count = Math.floor(remaining / scale.value);
+        remaining %= scale.value;
+
+        if (count === 1) {
+          result += (result ? " " : "") + scale.singular;
+        } else {
+          let prefix = convertHundreds(count, "masc");
+          if (/^[aeiouàèéìòù]/i.test(scale.plural) && prefix.endsWith("o")) {
+            prefix = prefix.slice(0, -1);
+          }
+          const scaleWord = scale.value === 1000 ? "milla" : scale.plural;
+          result += (result ? " " : "") + prefix + scaleWord;
         }
-        const scaleWord = scale.value === 1000 ? "milla" : scale.plural;
-        result += (result ? " " : "") + prefix + scaleWord;
       }
+    }
+
+    if (remaining > 0) {
+      const remStr = convertHundreds(remaining, activeGender);
+      const separator = remaining >= 20 ? "-" : " ";
+      result += (result ? separator : "") + remStr;
     }
   }
 
-  if (remaining > 0) {
-    const remStr = convertHundreds(remaining, activeGender);
-    // Extend hyphenation rule universally across scale boundaries when remainder is >= 20
-    const separator = remaining >= 20 ? "-" : " ";
-    result += (result ? separator : "") + remStr;
-  }
-
-  return result;
+  return isNegative ? `mino ${result}` : result;
 }
 
 export function getOrdinalHelper(n, gender = "masc") {

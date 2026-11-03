@@ -144,14 +144,15 @@
 
       <div class="custom-card">
         <label for="numberInput" class="custom-label"
-          >Enter a number (0 – 999,999,999,999,999):</label
+          >Enter a number (0 – 999,999,999,999,999) - (supports negative numbers
+          too!):</label
         >
         <input
           type="number"
           id="numberInput"
           class="custom-input"
-          placeholder="e.g. 123"
-          min="0"
+          placeholder="e.g. -123"
+          min="-999999999999999"
           max="999999999999999"
         />
 
@@ -274,22 +275,16 @@
           return;
         }
 
-        if (num < 0) {
-          resultEl.textContent = "Negative numbers are not supported.";
-          resultEl.className = "custom-result error";
-          return;
-        }
-
-        if (num > 999999999999999) {
+        if (num < -999999999999999 || num > 999999999999999) {
           resultEl.textContent =
-            "Number too large! Maximum limit is 999,999,999,999,999.";
+            "Number out of range! Limits are between -999,999,999,999,999 and 999,999,999,999,999.";
           resultEl.className = "custom-result error";
           return;
         }
 
         try {
           const ionianText = numberToIonian(num, gender);
-          let resultHTML = `Ionian: ${ionianText}`;
+          let resultHTML = `${ionianText}`;
 
           if (gender === "neut" && num >= 2) {
             resultHTML += ` <small class="text-muted d-block mt-2" style="font-size: 0.85rem; font-weight: normal;">(Note: Neuter has no plural; using feminine agreement forms for "du/tre" and above)</small>`;
