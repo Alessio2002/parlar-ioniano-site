@@ -62,6 +62,18 @@
         color: #721c24;
         border: 1px solid #f5c6cb;
       }
+      .help-btn-orange {
+        background-color: #fd7e14;
+        border-color: #fd7e14;
+        transition: background-color 0.2s ease, transform 0.2s ease,
+          box-shadow 0.3s ease;
+      }
+      .help-btn-orange:hover {
+        background-color: #e56b0b !important;
+        border-color: #e56b0b !important;
+        transform: translateY(-1px);
+        box-shadow: 0 0 15px rgba(253, 126, 20, 0.8) !important;
+      }
     </style>
   </head>
   <body>
@@ -106,20 +118,21 @@
             <li>
               <a class="dropdown-item" href="tests/tests.html">Test Suite</a>
             </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <button
-                type="button"
-                class="dropdown-item fw-bold text-orange"
-                data-bs-toggle="modal"
-                data-bs-target="#ionianoHelpModal"
-              >
-                Help / What is this?
-              </button>
-            </li>
           </ul>
         </div>
       </nav>
+
+      <!-- Help / What is this? Button Positioned Directly Below the Blue Bar -->
+      <div class="d-flex justify-content-end mt-2 px-1">
+        <button
+          type="button"
+          class="btn help-btn-orange text-white fw-bold btn-sm px-3 rounded-pill shadow-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#ionianoHelpModal"
+        >
+          Help / What is this?
+        </button>
+      </div>
     </header>
 
     <main class="numbers-wrapper">
@@ -187,11 +200,22 @@
           </div>
           <div class="modal-body p-4">
             <p>
-              <strong>Parlar Ioniano</strong> is the native documentation portal
-              for <strong>Ionian (Lingua ioniana)</strong>, a detailed
-              constructed romance language featuring three grammatical genders
-              (Masculine, Feminine, Neuter) and comprehensive phonetic and
-              grammatical paradigms.
+              <strong>Parlar Ioniano - To speak Ionian</strong> is the native
+              documentation portal for <strong>Ionian (Lingua ioniana)</strong>,
+              a detailed constructed romance language featuring three
+              grammatical genders (Masculine, Feminine, Neuter) and
+              comprehensive phonetic and grammatical paradigms. <br /><br />
+              Lingua ioniana is a constructed language that has been developed
+              independently from Latin, but since it is a romance language, it
+              has many similarities to Latin and other romance languages.
+              <br /><br />
+              It is a language that has been developed for the purpose of
+              communication and expression, and it has its own unique grammar,
+              vocabulary, and pronunciation rules.
+            </p>
+            <p class="mb-0 text-muted small">
+              Use the top navigation menu to explore alphabet rules,
+              pronunciation guides, pronouns, and structural grammar matrices.
             </p>
           </div>
           <div class="modal-footer">
@@ -267,7 +291,6 @@
           const ionianText = numberToIonian(num, gender);
           let resultHTML = `Ionian: ${ionianText}`;
 
-          // Explicitly state that neuter uses feminine agreement because neuter has no plural
           if (gender === "neut" && num >= 2) {
             resultHTML += ` <small class="text-muted d-block mt-2" style="font-size: 0.85rem; font-weight: normal;">(Note: Neuter has no plural; using feminine agreement forms for "du/tre" and above)</small>`;
           }
