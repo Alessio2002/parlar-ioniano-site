@@ -40,8 +40,10 @@ export async function renderAlphabetPage(containerId, filePath) {
               <div class="col"><code>[ɛ]</code> — open 'è / e' (like the 'e' in <em>bed</em>)</div>
               <div class="col"><code>[i]</code> — 'ee' sound (like the 'i' in <em>machine</em>)</div>
               <div class="col"><code>[o]</code> — closed 'o' (like the 'o' in <em>note</em>)</div>
-              <div class="col"><code>[ɔ]</code> — open 'ò' (like the 'o' in <em>thought</em>)</div>
+              <div class="col"><code>[ɔ]</code> — open 'ò / o' (like the 'o' in <em>thought</em>)</div>
               <div class="col"><code>[u]</code> — 'oo' sound (like the 'u' in <em>boot</em>)</div>
+              <div class="col"><code>[ə]</code> — schwa sound (like the 'a' in <em>sofa</em>), appears when a word ends with <j> - [j.jə] or final <r> letter of infinite verbs - [ɾə]</div>
+              <div class="col"><code>[ǝ]</code> — schwa sound (like the 'a' in <em>sofa</em>), appears when a word ends with the following sounds: T [t], D [d], Z [z], Z' [t͡s̺], L [l] or Sc' [ʃ] - [ə] sound is placed after the sound, e.g. T [t] + [ə] = [tə]</div>
             </div>
 
             <hr class="my-3">
