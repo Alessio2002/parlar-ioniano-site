@@ -187,7 +187,7 @@ export async function renderAlphabetPage(containerId, filePath) {
         html += `</ul>`;
       }
 
-      // Postalveolar Sequences (Corrected Terminology)
+      // Postalveolar Sequences
       if (dio.postalveolar_sequences && dio.postalveolar_sequences.length > 0) {
         html += `<h3>Postalveolar Sequences</h3><table><thead><tr><th>Pattern</th><th>IPA</th></tr></thead><tbody>`;
         dio.postalveolar_sequences.forEach((p) => {

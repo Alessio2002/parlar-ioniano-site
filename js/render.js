@@ -31,7 +31,7 @@ export function renderTable({ title, columns, rows, note }, containerEl) {
     const tr = document.createElement("tr");
     rowData.forEach((cellData) => {
       const td = document.createElement("td");
-      td.innerHTML = cellData; // <--- Changed from textContent to innerHTML
+      td.innerHTML = cellData;
       tr.appendChild(td);
     });
     tbody.appendChild(tr);

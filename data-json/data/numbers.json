@@ -1,0 +1,117 @@
+{
+  "cardinals": {
+    "units": {
+      "0": "zero",
+      "1": "uno",
+      "2": "du",
+      "3": "tre",
+      "4": "quatro",
+      "5": "cinco",
+      "6": "sei",
+      "7": "setê",
+      "8": "oto",
+      "9": "nove"
+    },
+    "teens": {
+      "10": "dece",
+      "11": "undece",
+      "12": "dudece",
+      "13": "tredece",
+      "14": "quatrodece",
+      "15": "quindece",
+      "16": "seidece",
+      "17": "decesetê",
+      "18": "decioto",
+      "19": "decenove"
+    },
+    "tens": {
+      "20": "vinti",
+      "30": "trenta",
+      "40": "quaranta",
+      "50": "cinquanta",
+      "60": "seiquanta",
+      "70": "seganta",
+      "80": "oiganta",
+      "90": "novequanta"
+    },
+    "hundreds": {
+      "100": "cento",
+      "200": "ducento",
+      "300": "trecento",
+      "400": "quatrocento",
+      "500": "cincocento",
+      "600": "seicento",
+      "700": "secento",
+      "800": "oicento",
+      "900": "novecento"
+    },
+    "thousands": {
+      "1000": "mille",
+      "plural_suffix": "milla"
+    }
+  },
+  "ordinals": {
+    "1": "primo",
+    "2": "secondo",
+    "3": "terzzo",
+    "4": "quarto",
+    "5": "quinto",
+    "6": "seisto",
+    "7": "setêmo",
+    "8": "otavo",
+    "9": "nono",
+    "suffixes": {
+      "compound_1": "unesimo",
+      "compound_2": "dusimo",
+      "compound_3": "tresimo",
+      "compound_4": "quatrosimo",
+      "compound_5": "cinquesimo",
+      "compound_6": "seisimo",
+      "compound_7": "setêsimo",
+      "compound_8": "otosimo",
+      "compound_9": "novesimo",
+      "default": "esimo"
+    }
+  },
+  "rules": {
+    "dash_threshold": 120,
+    "apocope": {
+      "7_before_cg": "se",
+      "8_before_cgm": "oi",
+      "19000_nove": "decenomilla"
+    }
+  },
+  "comparison_table": {
+    "title": "Number Comparison & System Overview (PDF Pages 42–45)",
+    "columns": [
+      "Value / Range",
+      "Standard Ionian Form",
+      "Notes & Phonetic Rules"
+    ],
+    "rows": [
+      [
+        "0–9",
+        "Zero to Nove",
+        "Base cardinal units. Oto shifts to Oi before C, G, or M."
+      ],
+      ["10–19", "Dece to Decenove", "Teens forms. Decesetê uses Setê."],
+      [
+        "20–90",
+        "Vinti to Novequanta",
+        "Tens. Vowels clip when unit starts with a vowel (e.g. Cinquantoto)."
+      ],
+      ["100–900", "Cento to Novecento", "200–900 use number + -cento."],
+      [
+        "1.000–9.000",
+        "Mille to Novemilla",
+        "Singular 1000 is Mille; plurals from 2000 up use -milla."
+      ],
+      [
+        "120+",
+        "Dash separation",
+        "Numbers 120 and above separate tens/units from hundreds with a dash."
+      ]
+    ],
+    "note": "Source: PDF Pages 42–45 | Rules apply strictly to numeric and cardinal forms."
+  }
+}

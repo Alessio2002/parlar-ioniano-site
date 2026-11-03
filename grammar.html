@@ -11,7 +11,6 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
     <style>
       body {
@@ -25,7 +24,6 @@
       td {
         font-family: "Lucida Sans Unicode", "DejaVu Sans", Arial, sans-serif;
       }
-      /* Custom Orange Button with Glowing Hover Effect */
       .help-btn-orange {
         background-color: #fd7e14;
         border-color: #fd7e14;
@@ -76,6 +74,12 @@
                 >Pronouns & Grammar</a
               >
             </li>
+            <li>
+              <a class="dropdown-item" href="numbers.html">Numbers Converter</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="tests/tests.html">Test Suite</a>
+            </li>
             <li><hr class="dropdown-divider" /></li>
             <li>
               <button
@@ -96,34 +100,22 @@
       <h1 class="mb-4">Ionian Grammar & Pronouns Documentation</h1>
       <p class="text-muted mb-4">
         Interactive data-driven grammar matrices and pronoun paradigms
-        transcribed from reference documentation (PDF pages 8, 13–18, and
-        19–26).
+        transcribed from reference documentation.
       </p>
 
-      <!-- Loading State Container -->
       <div id="loading-state" class="text-center py-5">
         <div class="spinner-border text-primary" role="status">
           <span class="visually-hidden">Loading grammar data...</span>
         </div>
-        <p class="mt-2 text-muted">
-          Loading grammar tables from data source...
-        </p>
       </div>
 
-      <!-- Error State Container (Hidden by default) -->
       <div id="error-state" class="alert alert-danger d-none" role="alert">
         <h4 class="alert-heading">Failed to load grammar data</h4>
-        <p id="error-message">
-          An error occurred while fetching the grammar dataset. Please check if
-          the data file exists and try again.
-        </p>
+        <p id="error-message"></p>
       </div>
 
-      <!-- Main Content Container (Accordion layout, hidden until loaded) -->
       <div id="grammar-content" class="d-none">
-        <div class="accordion" id="grammarAccordion">
-          <!-- Dynamically populated via JS -->
-        </div>
+        <div class="accordion" id="grammarAccordion"></div>
       </div>
     </main>
 
@@ -157,18 +149,7 @@
               for <strong>Ionian (Lingua ioniana)</strong>, a detailed
               constructed romance language featuring three grammatical genders
               (Masculine, Feminine, Neuter) and comprehensive phonetic and
-              grammatical paradigms. <br /><br />
-              Lingua ioniana is a constructed language that has been developed
-              independently from Latin, but since it is a romance language, it
-              has many similarities to Latin and other romance languages.
-              <br /><br />
-              It is a language that has been developed for the purpose of
-              communication and expression, and it has its own unique grammar,
-              vocabulary, and pronunciation rules.
-            </p>
-            <p class="mb-0 text-muted small">
-              Use the top navigation menu to explore alphabet rules,
-              pronunciation guides, pronouns, and structural grammar matrices.
+              grammatical paradigms.
             </p>
           </div>
           <div class="modal-footer">
@@ -193,14 +174,12 @@
       }
     </script>
 
-    <!-- Pinned Bootstrap JS Bundle CDN with Integrity Hash -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
 
-    <!-- Wire-up Script -->
     <script type="module">
       import { renderTable } from "./js/render.js";
 
@@ -212,23 +191,12 @@
 
         try {
           const response = await fetch("data-json/data/grammar.json");
-          if (!response.ok) {
-            throw new Error(
-              `HTTP error! status: ${response.status} (File not found or unreadable)`
-            );
-          }
-
+          if (!response.ok)
+            throw new Error(`HTTP error! status: ${response.status}`);
           const data = await response.json();
           const grammarSets = data.pronouns;
 
-          if (!grammarSets || !Array.isArray(grammarSets)) {
-            throw new Error(
-              "Invalid JSON structure: 'pronouns' array is missing."
-            );
-          }
-
           accordionContainer.innerHTML = "";
-
           grammarSets.forEach((set, index) => {
             const isFirst = index === 0;
             const itemId = `collapse-${set.id}`;
@@ -237,7 +205,7 @@
             const accordionItem = document.createElement("div");
             accordionItem.className = "accordion-item mb-2 border rounded";
 
-            const headerHTML = `
+            accordionItem.innerHTML = `
               <h2 class="accordion-header" id="${headerId}">
                 <button class="accordion-button ${
                   isFirst ? "" : "collapsed"
@@ -254,7 +222,6 @@
             bodyDiv.className = `accordion-collapse collapse ${
               isFirst ? "show" : ""
             }`;
-            bodyDiv.ariaLabelledBy = headerId;
             bodyDiv.dataset.bsParent = "#grammarAccordion";
 
             const bodyContent = document.createElement("div");
@@ -276,8 +243,6 @@
 
             bodyContent.appendChild(tableElement);
             bodyDiv.appendChild(bodyContent);
-
-            accordionItem.innerHTML = headerHTML;
             accordionItem.appendChild(bodyDiv);
             accordionContainer.appendChild(accordionItem);
           });
@@ -285,7 +250,6 @@
           loadingEl.classList.add("d-none");
           contentEl.classList.remove("d-none");
         } catch (err) {
-          console.error("Error loading grammar data:", err);
           loadingEl.classList.add("d-none");
           document.getElementById(
             "error-message"
