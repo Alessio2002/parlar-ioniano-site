@@ -16,7 +16,7 @@
       .numbers-wrapper {
         max-width: 900px;
         margin: 2rem auto;
-        padding: 0 1rem 5rem 1rem; /* Added bottom padding so it never touches the edge */
+        padding: 0 1rem 5rem 1rem;
       }
       .custom-card {
         background: #ffffff;
@@ -139,7 +139,7 @@
       <h1>Numbers & Converter</h1>
       <p>
         Convert any cardinal or ordinal number up to ±999,999,999,999,999 into
-        Standard Ionian with full gender agreement.
+        Standard Ionian with correct grammatical agreement.
       </p>
 
       <div class="custom-card">
@@ -165,7 +165,7 @@
           >Select Grammatical Gender / Agreement:</label
         >
         <select id="genderSelect" class="custom-select">
-          <option value="masc">Masculine (Default / Mixed)</option>
+          <option value="masc">Masculine</option>
           <option value="fem">Feminine</option>
           <option value="neut">Neuter (Inanimate only)</option>
         </select>
@@ -290,15 +290,23 @@
         }
 
         try {
-          const ionianText =
-            type === "ordinal"
-              ? getOrdinalHelper(num, gender)
-              : numberToIonian(num, gender);
+          let resultHTML = "";
 
-          let resultHTML = `${ionianText}`;
+          if (type === "ordinal") {
+            const ord = getOrdinalHelper(num, gender);
+            resultHTML = `<div><strong>Singular:</strong> ${ord.singular}</div>`;
+            resultHTML += `<div class="mt-1"><strong>Plural:</strong> ${ord.plural}</div>`;
 
-          if (gender === "neut" && Math.abs(num) >= 2) {
-            resultHTML += ` <small class="text-muted d-block mt-2" style="font-size: 0.85rem; font-weight: normal;">(Note: Neuter has no plural; using feminine agreement forms for "du/tre" and above)</small>`;
+            if (ord.isNeuter) {
+              resultHTML += ` <small class="text-muted d-block mt-2" style="font-size: 0.85rem; font-weight: normal;">(Note: Neuter has no plural; shifting to feminine plural agreement form "-e")</small>`;
+            }
+          } else {
+            const ionianText = numberToIonian(num, gender);
+            resultHTML = `${ionianText}`;
+
+            if (gender === "neut" && Math.abs(num) >= 2) {
+              resultHTML += ` <small class="text-muted d-block mt-2" style="font-size: 0.85rem; font-weight: normal;">(Note: Neuter has no plural; using feminine agreement forms for "du/tre" and above)</small>`;
+            }
           }
 
           resultEl.innerHTML = resultHTML;

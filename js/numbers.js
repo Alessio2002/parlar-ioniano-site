@@ -145,8 +145,7 @@ export function numberToIonian(num, gender = "masc") {
 
     if (remaining > 0) {
       const remStr = convertHundreds(remaining, activeGender);
-      const separator = remaining >= 20 ? "-" : " ";
-      result += (result ? separator : "") + remStr;
+      result += (result ? "-" : "") + remStr;
     }
   }
 
@@ -162,40 +161,42 @@ export function getOrdinalHelper(num, gender = "masc") {
     );
   }
 
-  const activeGender = gender === "neut" && n >= 2 ? "fem" : gender;
+  // Helper to build a single ordinal form based on a target ending (-o, -a, -u, -i, -e)
+  const buildForm = (ending) => {
+    if (n === 1) return `prim${ending}`;
+    if (n === 2) return `second${ending}`;
+    if (n === 3) return `terzz${ending}`;
+    if (n === 4) return `quart${ending}`;
+    if (n === 5) return `quint${ending}`;
+    if (n === 6) return `seist${ending}`;
+    if (n === 7) return `setêm${ending}`;
+    if (n === 8) return `otav${ending}`;
+    if (n === 9) return `non${ending}`;
+    if (n === 10) return `decesim${ending}`;
 
-  const ORDINALS_BASE = {
-    1: { masc: "primo", fem: "prima", neut: "primu" },
-    2: { masc: "secondo", fem: "seconda", neut: "seconda" },
-    3: { masc: "terzzo", fem: "terzza", neut: "terzza" },
-    4: { masc: "quarto", fem: "quarta", neut: "quarta" },
-    5: { masc: "quinto", fem: "quinta", neut: "quinta" },
-    6: { masc: "seisto", fem: "seista", neut: "seista" },
-    7: { masc: "setêmo", fem: "setêma", neut: "setêma" },
-    8: { masc: "otavo", fem: "otava", neut: "otava" },
-    9: { masc: "nono", fem: "nona", neut: "nona" },
-    10: { masc: "decesimo", fem: "decesima", neut: "decesima" },
+    const cardinalStr = numberToIonian(n, "masc");
+    const ordinalStem = cardinalStr.replace(/[aeiouàèéìòù]$/i, "") + "esim";
+    return ordinalStem + ending;
   };
 
-  if (n <= 10 && ORDINALS_BASE[n]) {
-    return ORDINALS_BASE[n][activeGender] || ORDINALS_BASE[n].masc;
+  if (gender === "masc") {
+    return {
+      singular: buildForm("o"),
+      plural: buildForm("i"),
+    };
+  } else if (gender === "fem") {
+    return {
+      singular: buildForm("a"),
+      plural: buildForm("e"),
+    };
+  } else if (gender === "neut") {
+    // Neuter has no plural, shifts to feminine plural (-e)
+    return {
+      singular: buildForm("u"),
+      plural: buildForm("e"),
+      isNeuter: true,
+    };
   }
 
-  // For numbers > 10, generate the cardinal base and apply the gendered -esimo suffix rule
-  const cardinalStr = numberToIonian(n, "masc");
-
-  // Suffix agreement mapping
-  let suffix = "esimo";
-  if (activeGender === "fem") {
-    suffix = "esima";
-  } else if (activeGender === "neut") {
-    suffix = "esimu";
-  }
-
-  // If the cardinal string ends with a vowel (like vinti -> vintiesimo), drop the final vowel
-  if (/[aeiouàèéìòù]$/i.test(cardinalStr)) {
-    return cardinalStr.slice(0, -1) + suffix;
-  }
-
-  return cardinalStr + suffix;
+  return { singular: buildForm("o"), plural: buildForm("i") };
 }
