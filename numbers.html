@@ -138,23 +138,28 @@
     <main class="numbers-wrapper">
       <h1>Numbers & Converter</h1>
       <p>
-        Convert any cardinal number up to 999,999,999,999,999 into Standard
-        Ionian with gender agreement.
+        Convert any cardinal or ordinal number up to ±999,999,999,999,999 into
+        Standard Ionian with full gender agreement.
       </p>
 
       <div class="custom-card">
         <label for="numberInput" class="custom-label"
-          >Enter a number (0 – 999,999,999,999,999) - (supports negative numbers
-          too!):</label
+          >Enter an integer (supports negative numbers for cardinals):</label
         >
         <input
           type="number"
           id="numberInput"
           class="custom-input"
-          placeholder="e.g. -123"
+          placeholder="e.g. 123 or -5"
           min="-999999999999999"
           max="999999999999999"
         />
+
+        <label for="typeSelect" class="custom-label">Number Form Type:</label>
+        <select id="typeSelect" class="custom-select">
+          <option value="cardinal">Cardinal (e.g. uno, du, tre)</option>
+          <option value="ordinal">Ordinal (e.g. primo, secondo, terzzo)</option>
+        </select>
 
         <label for="genderSelect" class="custom-label"
           >Select Grammatical Gender / Agreement:</label
@@ -248,16 +253,18 @@
     ></script>
 
     <script type="module">
-      import { numberToIonian } from "./js/numbers.js";
+      import { numberToIonian, getOrdinalHelper } from "./js/numbers.js";
       import { renderTable } from "./js/render.js";
 
       const inputEl = document.getElementById("numberInput");
+      const typeEl = document.getElementById("typeSelect");
       const genderEl = document.getElementById("genderSelect");
       const resultEl = document.getElementById("converterResult");
       const comparisonContainer = document.getElementById("comparison-section");
 
       function updateConversion() {
         const val = inputEl.value.trim();
+        const type = typeEl.value;
         const gender = genderEl.value;
 
         if (val === "") {
@@ -283,10 +290,14 @@
         }
 
         try {
-          const ionianText = numberToIonian(num, gender);
+          const ionianText =
+            type === "ordinal"
+              ? getOrdinalHelper(num, gender)
+              : numberToIonian(num, gender);
+
           let resultHTML = `${ionianText}`;
 
-          if (gender === "neut" && num >= 2) {
+          if (gender === "neut" && Math.abs(num) >= 2) {
             resultHTML += ` <small class="text-muted d-block mt-2" style="font-size: 0.85rem; font-weight: normal;">(Note: Neuter has no plural; using feminine agreement forms for "du/tre" and above)</small>`;
           }
 
@@ -299,6 +310,7 @@
       }
 
       inputEl.addEventListener("input", updateConversion);
+      typeEl.addEventListener("change", updateConversion);
       genderEl.addEventListener("change", updateConversion);
 
       async function loadComparisonData() {

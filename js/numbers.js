@@ -1,7 +1,6 @@
 const UNITS = {
   0: "zero",
   1: { masc: "uno", fem: "una", neut: "unu" },
-  // Neuter plural uses feminine forms (dua, tria) because neuter has no plural
   2: { masc: "du", fem: "dua", neut: "dua" },
   3: { masc: "tre", fem: "tria", neut: "tria" },
   4: "quatro",
@@ -128,16 +127,19 @@ export function numberToIonian(num, gender = "masc") {
         const count = Math.floor(remaining / scale.value);
         remaining %= scale.value;
 
+        let scaleChunk = "";
         if (count === 1) {
-          result += (result ? " " : "") + scale.singular;
+          scaleChunk = scale.singular;
         } else {
           let prefix = convertHundreds(count, "masc");
           if (/^[aeiouàèéìòù]/i.test(scale.plural) && prefix.endsWith("o")) {
             prefix = prefix.slice(0, -1);
           }
           const scaleWord = scale.value === 1000 ? "milla" : scale.plural;
-          result += (result ? " " : "") + prefix + scaleWord;
+          scaleChunk = prefix + scaleWord;
         }
+
+        result += (result ? "-" : "") + scaleChunk;
       }
     }
 
@@ -151,7 +153,15 @@ export function numberToIonian(num, gender = "masc") {
   return isNegative ? `mino ${result}` : result;
 }
 
-export function getOrdinalHelper(n, gender = "masc") {
+export function getOrdinalHelper(num, gender = "masc") {
+  const n = parseInt(num, 10);
+
+  if (isNaN(n) || n < 1 || n > 999999999999999) {
+    throw new RangeError(
+      "Ordinal numbers must be positive integers between 1 and 999,999,999,999,999."
+    );
+  }
+
   const activeGender = gender === "neut" && n >= 2 ? "fem" : gender;
 
   const ORDINALS_BASE = {
@@ -167,8 +177,25 @@ export function getOrdinalHelper(n, gender = "masc") {
     10: { masc: "decesimo", fem: "decesima", neut: "decesima" },
   };
 
-  if (ORDINALS_BASE[n]) {
+  if (n <= 10 && ORDINALS_BASE[n]) {
     return ORDINALS_BASE[n][activeGender] || ORDINALS_BASE[n].masc;
   }
-  return `${numberToIonian(n, activeGender)}esimo`;
+
+  // For numbers > 10, generate the cardinal base and apply the gendered -esimo suffix rule
+  const cardinalStr = numberToIonian(n, "masc");
+
+  // Suffix agreement mapping
+  let suffix = "esimo";
+  if (activeGender === "fem") {
+    suffix = "esima";
+  } else if (activeGender === "neut") {
+    suffix = "esimu";
+  }
+
+  // If the cardinal string ends with a vowel (like vinti -> vintiesimo), drop the final vowel
+  if (/[aeiouàèéìòù]$/i.test(cardinalStr)) {
+    return cardinalStr.slice(0, -1) + suffix;
+  }
+
+  return cardinalStr + suffix;
 }
