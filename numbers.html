@@ -138,8 +138,9 @@
     <main class="numbers-wrapper">
       <h1>Numbers & Converter</h1>
       <p>
-        Convert any cardinal or ordinal number up to ±999,999,999,999,999 into
-        Standard Ionian with correct grammatical agreement.
+        Convert any cardinal or ordinal number up to
+        ±999,999,999,999,999,999,999 into Standard Ionian with correct
+        grammatical agreement.
       </p>
 
       <div class="custom-card">
@@ -147,12 +148,10 @@
           >Enter an integer (supports negative numbers for cardinals):</label
         >
         <input
-          type="number"
+          type="text"
           id="numberInput"
           class="custom-input"
-          placeholder="e.g. 123 or -5"
-          min="-999999999999999"
-          max="999999999999999"
+          placeholder="e.g. 1000 or -5"
         />
 
         <label for="typeSelect" class="custom-label">Number Form Type:</label>
@@ -262,6 +261,9 @@
       const resultEl = document.getElementById("converterResult");
       const comparisonContainer = document.getElementById("comparison-section");
 
+      const MAX_LIMIT = 999999999999999999999n;
+      const MIN_LIMIT = -999999999999999999999n;
+
       function updateConversion() {
         const val = inputEl.value.trim();
         const type = typeEl.value;
@@ -273,18 +275,19 @@
           return;
         }
 
-        const num = Number(val);
-
-        if (isNaN(num)) {
+        let numBig;
+        try {
+          numBig = BigInt(val);
+        } catch (e) {
           resultEl.textContent =
-            "Invalid input: Please enter numeric digits only.";
+            "Invalid input: Please enter valid integer digits only.";
           resultEl.className = "custom-result error";
           return;
         }
 
-        if (num < -999999999999999 || num > 999999999999999) {
+        if (numBig < MIN_LIMIT || numBig > MAX_LIMIT) {
           resultEl.textContent =
-            "Number out of range! Limits are between -999,999,999,999,999 and 999,999,999,999,999.";
+            "Number out of range! Limits are between -999,999,999,999,999,999,999 and 999,999,999,999,999,999,999.";
           resultEl.className = "custom-result error";
           return;
         }
@@ -293,7 +296,7 @@
           let resultHTML = "";
 
           if (type === "ordinal") {
-            const ord = getOrdinalHelper(num, gender);
+            const ord = getOrdinalHelper(numBig, gender);
             resultHTML = `<div><strong>Singular:</strong> ${ord.singular}</div>`;
             resultHTML += `<div class="mt-1"><strong>Plural:</strong> ${ord.plural}</div>`;
 
@@ -301,10 +304,11 @@
               resultHTML += ` <small class="text-muted d-block mt-2" style="font-size: 0.85rem; font-weight: normal;">(Note: Neuter has no plural; shifting to feminine plural agreement form "-e")</small>`;
             }
           } else {
-            const ionianText = numberToIonian(num, gender);
+            const ionianText = numberToIonian(numBig, gender);
             resultHTML = `${ionianText}`;
 
-            if (gender === "neut" && Math.abs(num) >= 2) {
+            const absNum = numBig < 0n ? -numBig : numBig;
+            if (gender === "neut" && absNum >= 2n) {
               resultHTML += ` <small class="text-muted d-block mt-2" style="font-size: 0.85rem; font-weight: normal;">(Note: Neuter has no plural; using feminine agreement forms for "du/tre" and above)</small>`;
             }
           }

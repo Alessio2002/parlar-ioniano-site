@@ -48,14 +48,24 @@ const HUNDREDS = {
 };
 
 const SCALES = [
-  { value: 1000000000000, singular: "bilione", plural: "bilioni" },
-  { value: 1000000000, singular: "miliardo", plural: "miliardi" },
-  { value: 1000000, singular: "milione", plural: "milioni" },
-  { value: 1000, singular: "mille", plural: "milla" },
+  {
+    value: 1000000000000000000000n,
+    singular: "quintilione",
+    plural: "quintilioni",
+  },
+  { value: 1000000000000000000n, singular: "trilione", plural: "trilioni" },
+  { value: 1000000000000000n, singular: "biliardo", plural: "biliardi" },
+  { value: 1000000000000n, singular: "bilione", plural: "bilioni" },
+  { value: 1000000000n, singular: "miliardo", plural: "miliardi" },
+  { value: 1000000n, singular: "milione", plural: "milioni" },
+  { value: 1000n, singular: "mille", plural: "milla" },
 ];
 
+const MAX_LIMIT = 999999999999999999999n;
+const MIN_LIMIT = -999999999999999999999n;
+
 function getUnitStr(n, gender = "masc") {
-  const unit = UNITS[n];
+  const unit = UNITS[Number(n)];
   if (typeof unit === "object") {
     return unit[gender] || unit.masc;
   }
@@ -63,15 +73,15 @@ function getUnitStr(n, gender = "masc") {
 }
 
 function convertTens(n, gender = "masc") {
-  if (n < 10) return getUnitStr(n, gender);
-  if (n >= 10 && n < 20) return TEENS[n];
+  if (n < 10n) return getUnitStr(n, gender);
+  if (n >= 10n && n < 20n) return TEENS[Number(n)];
 
-  const ten = Math.floor(n / 10) * 10;
-  const unit = n % 10;
+  const ten = (n / 10n) * 10n;
+  const unit = n % 10n;
 
-  if (unit === 0) return TENS[ten];
+  if (unit === 0n) return TENS[Number(ten)];
 
-  const tenStr = TENS[ten];
+  const tenStr = TENS[Number(ten)];
   const unitStr = getUnitStr(unit, gender);
 
   if (/^[aeiouàèéìòù]/i.test(unitStr)) {
@@ -82,17 +92,17 @@ function convertTens(n, gender = "masc") {
 }
 
 function convertHundreds(n, gender = "masc") {
-  if (n < 100) return convertTens(n, gender);
+  if (n < 100n) return convertTens(n, gender);
 
-  const hundred = Math.floor(n / 100) * 100;
-  const remainder = n % 100;
+  const hundred = (n / 100n) * 100n;
+  const remainder = n % 100n;
 
-  if (remainder === 0) return HUNDREDS[hundred];
+  if (remainder === 0n) return HUNDREDS[Number(hundred)];
 
-  const hundredStr = HUNDREDS[hundred];
+  const hundredStr = HUNDREDS[Number(hundred)];
   const remainderStr = convertTens(remainder, gender);
 
-  if (remainder >= 20) {
+  if (remainder >= 20n) {
     return `${hundredStr}-${remainderStr}`;
   }
 
@@ -100,42 +110,47 @@ function convertHundreds(n, gender = "masc") {
 }
 
 export function numberToIonian(num, gender = "masc") {
-  const n = parseInt(num, 10);
+  let n;
+  try {
+    n = BigInt(num);
+  } catch (e) {
+    throw new RangeError("Input must be a valid integer.");
+  }
 
-  if (isNaN(n) || n < -999999999999999 || n > 999999999999999) {
+  if (n < MIN_LIMIT || n > MAX_LIMIT) {
     throw new RangeError(
-      "Input must be a valid integer between -999,999,999,999,999 and 999,999,999,999,999."
+      "Input must be between -999,999,999,999,999,999,999 and 999,999,999,999,999,999,999."
     );
   }
 
-  if (n === 0) return UNITS[0];
+  if (n === 0n) return UNITS[0];
 
-  const isNegative = n < 0;
-  const absN = Math.abs(n);
+  const isNegative = n < 0n;
+  const absN = isNegative ? -n : n;
 
-  const activeGender = gender === "neut" && absN >= 2 ? "fem" : gender;
+  const activeGender = gender === "neut" && absN >= 2n ? "fem" : gender;
 
   let result = "";
 
-  if (absN < 1000) {
+  if (absN < 1000n) {
     result = convertHundreds(absN, activeGender);
   } else {
     let remaining = absN;
 
     for (const scale of SCALES) {
       if (remaining >= scale.value) {
-        const count = Math.floor(remaining / scale.value);
+        const count = remaining / scale.value;
         remaining %= scale.value;
 
         let scaleChunk = "";
-        if (count === 1) {
+        if (count === 1n) {
           scaleChunk = scale.singular;
         } else {
           let prefix = convertHundreds(count, "masc");
           if (/^[aeiouàèéìòù]/i.test(scale.plural) && prefix.endsWith("o")) {
             prefix = prefix.slice(0, -1);
           }
-          const scaleWord = scale.value === 1000 ? "milla" : scale.plural;
+          const scaleWord = scale.value === 1000n ? "milla" : scale.plural;
           scaleChunk = prefix + scaleWord;
         }
 
@@ -143,7 +158,7 @@ export function numberToIonian(num, gender = "masc") {
       }
     }
 
-    if (remaining > 0) {
+    if (remaining > 0n) {
       const remStr = convertHundreds(remaining, activeGender);
       result += (result ? "-" : "") + remStr;
     }
@@ -153,50 +168,64 @@ export function numberToIonian(num, gender = "masc") {
 }
 
 export function getOrdinalHelper(num, gender = "masc") {
-  const n = parseInt(num, 10);
+  let n;
+  try {
+    n = BigInt(num);
+  } catch (e) {
+    throw new RangeError("Input must be a valid integer.");
+  }
 
-  if (isNaN(n) || n < 1 || n > 999999999999999) {
+  if (n < 1n || n > MAX_LIMIT) {
     throw new RangeError(
-      "Ordinal numbers must be positive integers between 1 and 999,999,999,999,999."
+      "Ordinal numbers must be positive integers up to 999,999,999,999,999,999,999."
     );
   }
 
-  // Helper to build a single ordinal form based on a target ending (-o, -a, -u, -i, -e)
-  const buildForm = (ending) => {
-    if (n === 1) return `prim${ending}`;
-    if (n === 2) return `second${ending}`;
-    if (n === 3) return `terzz${ending}`;
-    if (n === 4) return `quart${ending}`;
-    if (n === 5) return `quint${ending}`;
-    if (n === 6) return `seist${ending}`;
-    if (n === 7) return `setêm${ending}`;
-    if (n === 8) return `otav${ending}`;
-    if (n === 9) return `non${ending}`;
-    if (n === 10) return `decesim${ending}`;
+  const endings = {
+    masc: "o",
+    fem: "a",
+    neut: "u",
+    masc_pl: "i",
+    fem_pl: "e",
+  };
 
-    const cardinalStr = numberToIonian(n, "masc");
+  const activeGender = endings[gender] ? gender : "masc";
+  const ending = endings[activeGender];
+
+  const buildForm = (targetN, targetEnding) => {
+    if (targetN === 1n) return `prim${targetEnding}`;
+    if (targetN === 2n) return `second${targetEnding}`;
+    if (targetN === 3n) return `terzz${targetEnding}`;
+    if (targetN === 4n) return `quart${targetEnding}`;
+    if (targetN === 5n) return `quint${targetEnding}`;
+    if (targetN === 6n) return `seist${targetEnding}`;
+    if (targetN === 7n) return `setêm${targetEnding}`;
+    if (targetN === 8n) return `otav${targetEnding}`;
+    if (targetN === 9n) return `non${targetEnding}`;
+    if (targetN === 10n) return `decesim${targetEnding}`;
+
+    const cardinalStr = numberToIonian(targetN, "masc");
     const ordinalStem = cardinalStr.replace(/[aeiouàèéìòù]$/i, "") + "esim";
-    return ordinalStem + ending;
+    return ordinalStem + targetEnding;
   };
 
   if (gender === "masc") {
     return {
-      singular: buildForm("o"),
-      plural: buildForm("i"),
+      singular: buildForm(n, "o"),
+      plural: buildForm(n, "i"),
     };
   } else if (gender === "fem") {
     return {
-      singular: buildForm("a"),
-      plural: buildForm("e"),
+      singular: buildForm(n, "a"),
+      plural: buildForm(n, "e"),
     };
   } else if (gender === "neut") {
-    // Neuter has no plural, shifts to feminine plural (-e)
     return {
-      singular: buildForm("u"),
-      plural: buildForm("e"),
+      singular: buildForm(n, "u"),
+      plural: buildForm(n, "e"),
       isNeuter: true,
     };
   }
 
-  return { singular: buildForm("o"), plural: buildForm("i") };
+  return { singular: buildForm(n, "o"), plural: buildForm(n, "i") };
 }
