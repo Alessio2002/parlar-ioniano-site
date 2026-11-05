@@ -30,8 +30,8 @@ const tests = [
     test: () => numberToIonian(1, "fem") === "una",
   },
   {
-    name: "T08: Scale Check (1,000,000,000,000 -> biliardo)",
-    test: () => numberToIonian(1000000000000) === "biliardo",
+    name: "T08: Scale Check (1,000,000,000,000 -> bilione)",
+    test: () => numberToIonian(1000000000000) === "bilione",
   },
 ];
 

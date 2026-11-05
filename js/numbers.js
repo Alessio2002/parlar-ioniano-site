@@ -48,7 +48,7 @@ const HUNDREDS = {
 };
 
 const SCALES = [
-  { value: 1000000000000, singular: "biliardo", plural: "biliardi" },
+  { value: 1000000000000, singular: "bilione", plural: "bilioni" },
   { value: 1000000000, singular: "miliardo", plural: "miliardi" },
   { value: 1000000, singular: "milione", plural: "milioni" },
   { value: 1000, singular: "mille", plural: "milla" },
