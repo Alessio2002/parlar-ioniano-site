@@ -10,6 +10,7 @@ body {
   margin: 2rem auto !important;
   padding: 0 1rem !important;
   overflow-x: hidden;
+  overflow-y: auto !important;
 }
 
 /* Custom Navbar Styling matching Ionian document blue */
@@ -27,16 +28,29 @@ body {
   color: #d1e1f0 !important;
 }
 
+/* Full height iframe layout for index.html shell */
+.iframe-container {
+  width: 100%;
+  height: calc(100vh - 120px);
+  min-height: 600px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* --- Mobile Responsiveness (Portrait & Landscape Alignment) --- */
 @media (max-width: 992px) {
-  /* Ensure smooth, natural document flow and ample bottom cushioning */
   body {
     padding: 0.25rem 0.25rem 4rem 0.25rem !important;
     margin: 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    overflow-y: auto !important; /* Enables smooth full-page vertical scrolling */
+    overflow-y: auto !important;
   }
 
   main,
@@ -49,7 +63,6 @@ body {
     padding-right: 0.25rem !important;
   }
 
-  /* Dynamic iframe sizing that respects screen dimensions and scrolls naturally */
   .iframe-container {
     width: 100% !important;
     height: calc(100vh - 85px) !important;
@@ -57,13 +70,6 @@ body {
     -webkit-overflow-scrolling: touch;
   }
 
-  iframe {
-    width: 100% !important;
-    height: 100% !important;
-    border: none;
-  }
-
-  /* Make header span edge-to-edge with the rest of the content */
   #page-header {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -72,7 +78,6 @@ body {
     width: 100% !important;
   }
 
-  /* Contain Accordion cards and Tables so they stay inside bounds */
   .accordion,
   .accordion-item,
   .table-responsive {
@@ -97,13 +102,11 @@ body {
     padding: 0.4rem 0.3rem !important;
   }
 
-  /* Ensure dropdown menu stays within screen bounds */
   .dropdown-menu {
     max-width: 85vw;
   }
 }
 
-/* --- Mobile Landscape Specific Adjustments --- */
 @media (max-width: 992px) and (orientation: landscape) {
   body {
     padding: 0.15rem 0.25rem 3rem 0.25rem !important;

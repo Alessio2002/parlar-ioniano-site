@@ -1,0 +1,202 @@
+{
+  "dialogues": [
+    {
+      "title": "Greetings & Farewells (Pages 51–52)",
+      "turns": [
+        {
+          "speaker": "Speaker",
+          "ionian": "Salve",
+          "english": "Hello",
+          "ipa": "['sal.ve]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Salveti",
+          "english": "Hello (to more than 1 person)",
+          "ipa": "[sal've.ti]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Sà",
+          "english": "Hi (informal)",
+          "ipa": "['sa]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Bon' jorno",
+          "english": "Good morning",
+          "ipa": "[bon 'jor.no]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Bondie",
+          "english": "Good day",
+          "ipa": "[bon'di.e]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Bonsera",
+          "english": "Good evening",
+          "ipa": "[bon'se.ra]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Vale",
+          "english": "Bye",
+          "ipa": "['va.le]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Valeti",
+          "english": "Bye (to more than 1 person)",
+          "ipa": "[va'le.ti]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Ce videremo",
+          "english": "See you later",
+          "ipa": "[t͡ʃe_vi.de're.mo]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Bon' jornada",
+          "english": "Farewell! / Have a nice day!",
+          "ipa": "[bon jor'na.da]"
+        },
+        {
+          "speaker": "Speaker",
+          "ionian": "Bonotê",
+          "english": "Goodnight",
+          "ipa": "[bo'no.t͡ʃe]"
+        }
+      ]
+    },
+    {
+      "title": "Introducing: Antonio & Lina (Page 53)",
+      "context": "Se requede di sequer la conversazzion intrà Antonio é Lina.",
+      "turns": [
+        {
+          "speaker": "Antonio",
+          "ionian": "Salve! Mi clamo Antonio. Com ti clami?",
+          "english": "Hello! My name is Antonio. What is your name?"
+        },
+        {
+          "speaker": "Lina",
+          "ionian": "Salve, Antonio! Mi clamo Lina.",
+          "english": "Hello, Antonio! My name is Lina."
+        },
+        {
+          "speaker": "Antonio",
+          "ionian": "Com sè, Lina?",
+          "english": "How are you, Lina?"
+        },
+        {
+          "speaker": "Lina",
+          "ionian": "Sto bene, benfacì. É tu?",
+          "english": "I am well, thank you! And you?"
+        },
+        {
+          "speaker": "Antonio",
+          "ionian": "Pur'jo. Sto bene.",
+          "english": "Me too. I am well."
+        }
+      ]
+    },
+    {
+      "title": "Asking and Telling About Health (Page 54)",
+      "context": "Se requede di sequer la conversazzion intrà Antonio é Lina.",
+      "turns": [
+        { "speaker": "Antonio", "ionian": "Aj!", "english": "Ouch!" },
+        {
+          "speaker": "Lina",
+          "ionian": "Ste bene?",
+          "english": "Are you okay?"
+        },
+        {
+          "speaker": "Antonio",
+          "ionian": "Sto bene. È solo qe ajo um ponoqéfalo",
+          "english": "I am fine. It's just that I have a headache."
+        },
+        {
+          "speaker": "Lina",
+          "ionian": "Aj! Ajì qualcosa qe posso facer?",
+          "english": "Oh no! Is there something I can do?"
+        },
+        {
+          "speaker": "Antonio",
+          "ionian": "Cògito qe dobri bìver qualcosa.",
+          "english": "I think that I should drink something."
+        },
+        {
+          "speaker": "Lina",
+          "ionian": "Ajì unu cafetoriu qe cognoscio. Non è luntanu.",
+          "english": "There's a café that I know. It's not far."
+        },
+        {
+          "speaker": "Antonio",
+          "ionian": "Otîmo, jimmo!",
+          "english": "Sounds good, let's go!"
+        }
+      ]
+    },
+    {
+      "title": "Doing Business in a Café (Page 55)",
+      "context": "Se requede di sequer la conversazzion intrà Antonio, Lina é la barista.",
+      "turns": [
+        {
+          "speaker": "Antonio",
+          "ionian": "Finalmente, Siamo ali!",
+          "english": "At last, we are there!"
+        },
+        {
+          "speaker": "Lina",
+          "ionian": "Lè, è vero!",
+          "english": "Yes, it's true!"
+        },
+        {
+          "speaker": "Antonio",
+          "ionian": "Intunce, voliri una coppa d'espresso, unu biqer d'aqua éd un crescont, per favor.",
+          "english": "Well then, I would like to get a cup of espresso, a glass of water and a croissant, please."
+        },
+        {
+          "speaker": "Barista",
+          "ionian": "Le placerraria qualsisj'altro, signor?",
+          "english": "Would you like anything else, signor?"
+        },
+        {
+          "speaker": "Antonio",
+          "ionian": "Sto bene. Però Lina, placessi magnar qualcosa?",
+          "english": "I'm fine. But Lina, would you like to eat something?"
+        },
+        {
+          "speaker": "Lina",
+          "ionian": "Sì, voliri una gelacrema, unu biqer d'aqua éd un cafè, per favor.",
+          "english": "Yes, I would like an ice cream, a glass of water and a coffee, please."
+        },
+        {
+          "speaker": "Barista",
+          "ionian": "Perfeto! Un cafè, un'espresso, dua biqeri d'aqua, una gelacrema éd un crescont. Sarria undece denari... Benfacì! Dimurierà um momento, per favor.",
+          "english": "Perfect! A coffee, an espresso, two glasses of water, an ice cream and a croissant. It will be eleven denarii... Thank you! It will take a moment, please."
+        }
+      ]
+    },
+    {
+      "title": "Polite Phrases & Requests (Page 56)",
+      "turns": [
+        { "speaker": "Speaker", "ionian": "Per favor", "english": "Please" },
+        { "speaker": "Speaker", "ionian": "Benfacì", "english": "Thank you" },
+        {
+          "speaker": "Speaker",
+          "ionian": "Mi placerrarìa",
+          "english": "I would love to / I would like it"
+        }
+      ]
+    },
+    {
+      "title": "Coming Later (Pages 57–58)",
+      "pages": "57-58",
+      "status": "coming later",
+      "turns": []
+    }
+  ]
+}

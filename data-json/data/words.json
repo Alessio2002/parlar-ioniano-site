@@ -1,0 +1,160 @@
+{
+  "words": [
+    {
+      "ionian": "Salve",
+      "english": "Hello",
+      "ipa": "['sal.ve]",
+      "notes": "Standard greeting"
+    },
+    {
+      "ionian": "Sà",
+      "english": "Hi (informal)",
+      "ipa": "['sa]",
+      "notes": "Informal greeting"
+    },
+    {
+      "ionian": "Vale",
+      "english": "Bye",
+      "ipa": "['va.le]",
+      "notes": "Standard farewell"
+    },
+    {
+      "ionian": "Ce videremo",
+      "english": "See you later",
+      "ipa": "[t͡ʃe_vi.de'rɛ.mo]",
+      "notes": "Future expression"
+    },
+    {
+      "ionian": "Ce saremo vedendo craj",
+      "english": "See you tomorrow",
+      "ipa": "[t͡ʃe_sa'rɛ.mo ve'dɛndo 'kraj.jə]",
+      "notes": "Compound future expression with craj"
+    },
+    {
+      "ionian": "Èri",
+      "english": "Yesterday",
+      "ipa": "['ɛ.ri]",
+      "notes": "Time adverb"
+    },
+    {
+      "ionian": "Craj",
+      "english": "Tomorrow",
+      "ipa": "['kraj.jə]",
+      "notes": "Time adverb"
+    },
+    {
+      "ionian": "Bondie",
+      "english": "Good day",
+      "ipa": "[bon'di.e]",
+      "notes": "Greeting"
+    },
+    {
+      "ionian": "Bon' jorno",
+      "english": "Good morning",
+      "ipa": "[bon 'jɔr.no]",
+      "notes": "Greeting"
+    },
+    {
+      "ionian": "Bono (masc.) / Bona (fem.) / Bonu (neut.)",
+      "english": "Good",
+      "ipa": "['bɔ.no], ['bɔ.na], ['bɔ.nu]",
+      "notes": "Adjective with three-gender agreement"
+    },
+    {
+      "ionian": "Bene",
+      "english": "Well",
+      "ipa": "['bɛ.ne]",
+      "notes": "Adverb"
+    },
+    {
+      "ionian": "Bonotê",
+      "english": "Goodnight",
+      "ipa": "[bo'nɔ.t͡ʃe]",
+      "notes": "Greeting"
+    },
+    {
+      "ionian": "Per favor",
+      "english": "Please",
+      "ipa": "[per fa'vɔr]",
+      "notes": "Polite phrase"
+    },
+    {
+      "ionian": "Bonsera",
+      "english": "Good evening",
+      "ipa": "[bon'sɛ.ra]",
+      "notes": "Greeting"
+    },
+    {
+      "ionian": "Die",
+      "english": "Day (only used in some greetings)",
+      "ipa": "['di.e]",
+      "notes": "Specialized lexical item"
+    },
+    {
+      "ionian": "Jorno",
+      "english": "Day (general word for day)",
+      "ipa": "['jɔr.no]",
+      "notes": "General noun"
+    },
+    {
+      "ionian": "Matîna",
+      "english": "Morning",
+      "ipa": "[ma't͡ʃi.na]",
+      "notes": "Noun"
+    },
+    {
+      "ionian": "Sera",
+      "english": "Evening",
+      "ipa": "['sɛ.ra]",
+      "notes": "Noun"
+    },
+    {
+      "ionian": "Com sè?",
+      "english": "How are you?",
+      "ipa": "[kom 'sɛ]",
+      "notes": "Inquiry phrase"
+    },
+    {
+      "ionian": "Mi clamo",
+      "english": "My name is",
+      "ipa": "[mi 'kla.mo]",
+      "notes": "Reflexive structure (lit. myself I call)"
+    },
+    {
+      "ionian": "Com ti clami?",
+      "english": "What is your name?",
+      "ipa": "[kom ti 'kla.mi]",
+      "notes": "Reflexive structure"
+    },
+    {
+      "ionian": "Benfacì",
+      "english": "Thank you",
+      "ipa": "[ben.fa't͡ʃi]",
+      "notes": "Polite expression"
+    },
+    {
+      "ionian": "Dopo di te",
+      "english": "You are welcome",
+      "ipa": "['dɔ.po di te]",
+      "notes": "Polite response"
+    },
+    {
+      "ionian": "Di nente",
+      "english": "No problem",
+      "ipa": "[di 'nɛn.te]",
+      "notes": "Polite response"
+    },
+    {
+      "ionian": "Mi place",
+      "english": "I like it",
+      "ipa": "[mi 'pla.t͡ʃe]",
+      "notes": "Experiential verb construction"
+    },
+    {
+      "ionian": "Mi placerrarìa",
+      "english": "I would like it",
+      "ipa": "[mi pla.t͡ʃer.ra'ri.ja]",
+      "notes": "Conditional polite construction"
+    }
+  ]
+}
