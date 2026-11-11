@@ -281,16 +281,24 @@
               li.appendChild(badge);
 
               if (phraseMode === "both" || phraseMode === "ionian") {
-                const ion = document.createElement("span");
-                ion.className = "fw-bold text-primary me-2";
-                ion.textContent = t.ionian;
-                li.appendChild(ion);
+                const ionSpan = document.createElement("span");
+                ionSpan.className = "fw-bold text-primary me-2";
+                ionSpan.textContent = t.ionian;
+                li.appendChild(ionSpan);
               }
+
+              if (phraseMode === "both" && t.english) {
+                const sepSpan = document.createElement("span");
+                sepSpan.className = "fw-bold me-2";
+                sepSpan.textContent = "-";
+                li.appendChild(sepSpan);
+              }
+
               if (phraseMode === "both" || phraseMode === "english") {
-                const eng = document.createElement("span");
-                eng.className = "text-muted";
-                eng.textContent = `(${t.english})`;
-                li.appendChild(eng);
+                const engSpan = document.createElement("span");
+                engSpan.className = "fw-bold me-2";
+                engSpan.textContent = t.english;
+                li.appendChild(engSpan);
               }
               list.appendChild(li);
             });
