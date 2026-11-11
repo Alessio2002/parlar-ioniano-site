@@ -325,6 +325,8 @@
       typeEl.addEventListener("change", updateConversion);
       genderEl.addEventListener("change", updateConversion);
 
+      updateConversion();
+
       async function loadComparisonData() {
         try {
           const res = await fetch("data-json/data/numbers.json");
