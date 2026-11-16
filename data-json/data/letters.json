@@ -174,7 +174,7 @@
     "When a word has a hard G, C or SC, it must keep the hard sound in all forms of the word."
   ],
   "diacritics_and_combinations": {
-    "diacritics_overview": "Ionian features three diacritics: Grave <`>, Acute <´>, and Circumflex <^>.",
+    "diacritics_overview": "Ionian features three diacritics: Grave (`), Acute (´), and Circumflex (^).",
     "specific_combinations": [
       { "pattern": "c + ì + vowel", "ipa": ["[t͡ʃj]"] },
       { "pattern": "c + í + vowel", "ipa": ["['t͡ʃi]"] },
@@ -196,8 +196,8 @@
       }
     ],
     "diacritic_usage_notes": [
-      "Grave marker (`) distinguishes homonyms, marks stress position, and marks closed E [e] / O [o] versus open È [ɛ] / Ò [ɔ].",
-      "É appears always as closed [e].",
+      "Grave (`) distinguishes homonyms, marks stress position, and marks closed E [e] / O [o] versus open È [ɛ] / Ò [ɔ].",
+      "Acute (´) is also used with É and is always pronounced as closed [e].",
       "Circumflex (^) distinguishes ûi /ui̯/ from ui /wi/. The circumflex is used in the diphthong ûi and doesn't mark stress."
     ],
     "postalveolar_sequences": [
