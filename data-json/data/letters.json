@@ -27,7 +27,7 @@
       "letter": "E",
       "variants": [
         { "form": "E (unstressed)", "ipa": ["[e]"] },
-        { "form": "È", "ipa": ["[ɛ]"] },
+        { "form": "È (stressed)", "ipa": ["[ɛ]"] },
         { "form": "E (stressed)", "ipa": ["[ɛ]"] },
         { "form": "É (stressed)", "ipa": ["[e]"] }
       ]
@@ -80,8 +80,8 @@
     {
       "letter": "O",
       "variants": [
-        { "form": "O", "ipa": ["[o]"] },
-        { "form": "Ò", "ipa": ["[ɔ]"] },
+        { "form": "O (unstressed)", "ipa": ["[o]"] },
+        { "form": "Ò (stressed)", "ipa": ["[ɔ]"] },
         { "form": "O (stressed)", "ipa": ["[ɔ]"] }
       ]
     },
