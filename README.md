@@ -29,3 +29,23 @@ As the sole creator, owner, and copyright holder of Lingua Ioniana (Ionian), I h
 
 **Signature along with original copy of the permission:**
 https://drive.google.com/file/d/1xXRwpw6NCyu8Zpb4B8nz-6RvH4EQXdT7/view?usp=sharing
+
+## Instructions for Running Locally
+
+Because this portal dynamically loads structural data via JavaScript `fetch()` calls (`words.json`, `phrases.json`, `grammar.json`, `letters.json`), opening the HTML files directly via the `file://` protocol will trigger CORS security blocks.
+
+To run the site locally, use one of the following methods:
+
+### Option A: VS Code Live Server Extension
+
+1. Open the project folder in Visual Studio Code.
+2. Install the **Live Server** extension by Ritwick Dey.
+3. Right-click `index.html` and select **"Open with Live Server"**.
+
+### Option B: Python Local Server
+
+1. Open your terminal inside the project root directory.
+2. Run the following command:
+   ```bash
+   python3 -m http.server 8000
+   ```
